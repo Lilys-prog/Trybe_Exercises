@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:officeooo="http://openoffice.org/2009/office" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rpt="http://openoffice.org/2005/report" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:xforms="http://www.w3.org/2002/xforms" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><dc:date>2022-08-20T15:27:21.128919819</dc:date><meta:editing-duration>PT2H39M22S</meta:editing-duration><meta:editing-cycles>16</meta:editing-cycles><meta:generator>LibreOffice/7.3.5.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:document-statistic meta:table-count="0" meta:image-count="0" meta:object-count="0" meta:page-count="6" meta:paragraph-count="38" meta:word-count="485" meta:character-count="2788" meta:non-whitespace-character-count="2329"/></office:meta>
+ <office:meta><dc:date>2022-08-20T16:01:11.231787250</dc:date><meta:editing-duration>PT3H13M10S</meta:editing-duration><meta:editing-cycles>19</meta:editing-cycles><meta:generator>LibreOffice/7.3.5.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:document-statistic meta:table-count="0" meta:image-count="0" meta:object-count="0" meta:page-count="7" meta:paragraph-count="42" meta:word-count="575" meta:character-count="3309" meta:non-whitespace-character-count="2764"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
-   <config:config-item config:name="ViewAreaTop" config:type="long">149311</config:config-item>
+   <config:config-item config:name="ViewAreaTop" config:type="long">183760</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
    <config:config-item config:name="ViewAreaWidth" config:type="long">31969</config:config-item>
    <config:config-item config:name="ViewAreaHeight" config:type="long">14000</config:config-item>
@@ -13,12 +13,12 @@
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
-     <config:config-item config:name="ViewLeft" config:type="long">10380</config:config-item>
-     <config:config-item config:name="ViewTop" config:type="long">159833</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="long">23028</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="long">192624</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleTop" config:type="long">149311</config:config-item>
+     <config:config-item config:name="VisibleTop" config:type="long">183760</config:config-item>
      <config:config-item config:name="VisibleRight" config:type="long">31967</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">163310</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">197758</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">1</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
@@ -350,10 +350,25 @@
   <style:style style:name="P24" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:text-properties officeooo:rsid="0018afd1" officeooo:paragraph-rsid="0018afd1"/>
   </style:style>
-  <style:style style:name="P25" style:family="paragraph" style:parent-style-name="Text_20_body">
+  <style:style style:name="P25" style:family="paragraph" style:parent-style-name="Text_20_body" style:master-page-name="">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.247cm" style:contextual-spacing="false" fo:line-height="115%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="1cm" style:auto-text-indent="false" style:page-number="auto" fo:background-color="transparent"/>
+   <style:text-properties officeooo:rsid="0018afd1" officeooo:paragraph-rsid="0018afd1"/>
+  </style:style>
+  <style:style style:name="P26" style:family="paragraph" style:parent-style-name="Text_20_body">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.247cm" style:contextual-spacing="false" fo:line-height="115%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="1cm" style:auto-text-indent="false" fo:background-color="transparent"/>
+   <style:text-properties officeooo:rsid="0018afd1" officeooo:paragraph-rsid="0018afd1"/>
+  </style:style>
+  <style:style style:name="P27" style:family="paragraph" style:parent-style-name="Text_20_body">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.247cm" style:contextual-spacing="false" fo:line-height="115%" fo:text-align="justify" style:justify-single-word="false" fo:text-indent="1cm" style:auto-text-indent="false" fo:background-color="transparent"/>
+   <style:text-properties fo:font-weight="bold" officeooo:rsid="0018afd1" officeooo:paragraph-rsid="0018afd1" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="P28" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:text-properties style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="bold" officeooo:rsid="0018afd1" officeooo:paragraph-rsid="0018afd1" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P26" style:family="paragraph">
+  <style:style style:name="P29" style:family="paragraph">
    <style:paragraph-properties fo:text-align="center"/>
   </style:style>
   <style:style style:name="T1" style:family="text">
@@ -363,30 +378,45 @@
    <style:text-properties fo:font-size="15pt" style:text-underline-style="none" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T3" style:family="text">
-   <style:text-properties fo:font-size="15pt" fo:font-style="normal" style:text-underline-style="none" style:font-style-asian="normal" style:font-style-complex="normal"/>
+   <style:text-properties fo:font-size="15pt" fo:font-style="italic" fo:font-weight="normal" style:font-style-asian="italic" style:font-weight-asian="normal" style:font-style-complex="italic" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T4" style:family="text">
-   <style:text-properties fo:font-size="15pt" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-size="15pt" fo:font-style="normal" style:text-underline-style="none" style:font-style-asian="normal" style:font-style-complex="normal"/>
   </style:style>
   <style:style style:name="T5" style:family="text">
-   <style:text-properties fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-size="15pt" fo:font-style="normal" fo:font-weight="normal" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-style-complex="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T6" style:family="text">
-   <style:text-properties style:text-underline-style="none" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-size="15pt" fo:font-style="normal" fo:font-weight="bold" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-style-complex="normal" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T7" style:family="text">
-   <style:text-properties style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:font-size="15pt" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal"/>
   </style:style>
   <style:style style:name="T8" style:family="text">
-   <style:text-properties style:font-name="Liberation Sans" fo:font-size="18pt" fo:font-weight="bold" style:font-name-asian="Noto Sans CJK SC" style:font-size-asian="18pt" style:font-weight-asian="bold" style:font-name-complex="Lohit Devanagari1" style:font-size-complex="18pt" style:font-weight-complex="bold"/>
+   <style:text-properties fo:font-size="15pt" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T9" style:family="text">
-   <style:text-properties fo:background-color="#ffff00" loext:char-shading-value="0"/>
+   <style:text-properties fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T10" style:family="text">
-   <style:text-properties fo:background-color="#3465a4" loext:char-shading-value="0"/>
+   <style:text-properties style:text-underline-style="none" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T11" style:family="text">
+   <style:text-properties style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T12" style:family="text">
+   <style:text-properties style:font-name="Liberation Sans" fo:font-size="18pt" fo:font-weight="bold" style:font-name-asian="Noto Sans CJK SC" style:font-size-asian="18pt" style:font-weight-asian="bold" style:font-name-complex="Lohit Devanagari1" style:font-size-complex="18pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T13" style:family="text">
+   <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T14" style:family="text">
+   <style:text-properties fo:background-color="#ffff00" loext:char-shading-value="0"/>
+  </style:style>
+  <style:style style:name="T15" style:family="text">
+   <style:text-properties fo:background-color="#3465a4" loext:char-shading-value="0"/>
+  </style:style>
+  <style:style style:name="T16" style:family="text">
    <style:text-properties fo:background-color="#bf0041" loext:char-shading-value="0"/>
   </style:style>
   <text:list-style style:name="L1">
@@ -466,24 +496,24 @@
    </text:sequence-decls>
    <text:h text:style-name="P1" text:outline-level="1">Comandos de input e output no terminal</text:h>
    <text:p text:style-name="P16"/>
-   <text:p text:style-name="P17">cat &gt; arquivo.extensão<text:span text:style-name="T6"> → coloca os valores digitados (inputs) dentro do arquivo. </text:span><text:span text:style-name="T5">Atenção</text:span><text:span text:style-name="T6">, se o comando for usado novamente, o que for digitado vai sobrescrever o conteúdo anterior.</text:span></text:p>
-   <text:p text:style-name="P18">cat &gt;&gt; arquivo.extensão<text:span text:style-name="T6"> → adiciona conteúdo ao arquivo, sem alterar o conteúdo que já está lá.</text:span></text:p>
-   <text:p text:style-name="P18">cat arquivo1.extensão arquivo2.extensão &gt; arquivo3.extensão<text:span text:style-name="T6"> → os conteúdos de 1 e 2 serão colocados no 3. O &gt; ainda irá sobrescrever e o &gt;&gt; irá adicionar ao que já estiver lá.</text:span></text:p>
-   <text:p text:style-name="P18"><text:span text:style-name="T6"/></text:p>
-   <text:p text:style-name="P18">nano<text:span text:style-name="T6"> → permite alterar o conteúdo do arquivo, como apagar, consertar, trocar de lugar, “manualmente”.</text:span></text:p>
-   <text:h text:style-name="P2" text:outline-level="1">Manipulaç<text:span text:style-name="T8">ão de informações de arquivos</text:span></text:h>
-   <text:p text:style-name="P4">sort<text:span text:style-name="T6"> → Ordena o conte</text:span><text:span text:style-name="T2">údo do arquivo em ordem crescente, inclusive alfabética.</text:span></text:p>
+   <text:p text:style-name="P17">cat &gt; arquivo.extensão<text:span text:style-name="T10"> → coloca os valores digitados (inputs) dentro do arquivo. </text:span><text:span text:style-name="T9">Atenção</text:span><text:span text:style-name="T10">, se o comando for usado novamente, o que for digitado vai sobrescrever o conteúdo anterior.</text:span></text:p>
+   <text:p text:style-name="P18">cat &gt;&gt; arquivo.extensão<text:span text:style-name="T10"> → adiciona conteúdo ao arquivo, sem alterar o conteúdo que já está lá.</text:span></text:p>
+   <text:p text:style-name="P18">cat arquivo1.extensão arquivo2.extensão &gt; arquivo3.extensão<text:span text:style-name="T10"> → os conteúdos de 1 e 2 serão colocados no 3. O &gt; ainda irá sobrescrever e o &gt;&gt; irá adicionar ao que já estiver lá.</text:span></text:p>
+   <text:p text:style-name="P18"><text:span text:style-name="T10"/></text:p>
+   <text:p text:style-name="P18">nano<text:span text:style-name="T10"> → permite alterar o conteúdo do arquivo, como apagar, consertar, trocar de lugar, “manualmente”.</text:span></text:p>
+   <text:h text:style-name="P2" text:outline-level="1">Manipulaç<text:span text:style-name="T12">ão de informações de arquivos</text:span></text:h>
+   <text:p text:style-name="P4">sort<text:span text:style-name="T10"> → Ordena o conte</text:span><text:span text:style-name="T2">údo do arquivo em ordem crescente, inclusive alfabética.</text:span></text:p>
    <text:p text:style-name="P4"><text:span text:style-name="T2"/></text:p>
    <text:p text:style-name="P4"><text:span text:style-name="T1">Sort &lt; arquivo.extensão</text:span></text:p>
-   <text:p text:style-name="P5"><text:span text:style-name="T2">Vai alterar o output, sem mexer no arquivo em si. Ou seja, o conteúdo será mostrado em ordem crescente, mas no arquivo permanecerá da mesma forma. O símbolo </text:span><text:span text:style-name="T3">&lt;</text:span><text:span text:style-name="T2"> representa output.</text:span></text:p>
+   <text:p text:style-name="P5"><text:span text:style-name="T2">Vai alterar o output, sem mexer no arquivo em si. Ou seja, o conteúdo será mostrado em ordem crescente, mas no arquivo permanecerá da mesma forma. O símbolo </text:span><text:span text:style-name="T4">&lt;</text:span><text:span text:style-name="T2"> representa output.</text:span></text:p>
    <text:p text:style-name="P6"><text:span text:style-name="T1">sort &lt; arquivo1 &gt; arquivo2</text:span><text:span text:style-name="T2"> → vai fazer um output do conteúdo em ordem e colocá-lo dentro de um arquivo novo. Esse arquivo novo vai ter o mesmo conteúdo que 1, mas estará em ordem crescente.</text:span></text:p>
    <text:p text:style-name="P11"/>
-   <text:h text:style-name="P2" text:outline-level="1">Usu<text:span text:style-name="T8">ários e permissões</text:span></text:h>
-   <text:p text:style-name="P4">who<text:span text:style-name="T6"> → mostra quem est</text:span><text:span text:style-name="T2">á usando o sistema e a hora de login.</text:span></text:p>
-   <text:p text:style-name="P18"><text:span text:style-name="T6"/></text:p>
-   <text:p text:style-name="P18">| (pipe)<text:span text:style-name="T6"> → “Agrupa” comandos, passando o output de um para ser executado pelo próximo comando. Sempre da esquerda para a direita.</text:span></text:p>
-   <text:p text:style-name="P18"><text:span text:style-name="T6">Exemplo: </text:span>who | sort<text:span text:style-name="T6">: vai mostrar os usuários da máquina em ordem alfabética.</text:span></text:p>
-   <text:p text:style-name="P18">who | wc -l<text:span text:style-name="T6"> → vai mostrar o número de usuários online, já que é um por linha.</text:span></text:p>
+   <text:h text:style-name="P2" text:outline-level="1">Usu<text:span text:style-name="T12">ários e permissões</text:span></text:h>
+   <text:p text:style-name="P4">who<text:span text:style-name="T10"> → mostra quem est</text:span><text:span text:style-name="T2">á usando o sistema e a hora de login.</text:span></text:p>
+   <text:p text:style-name="P18"><text:span text:style-name="T10"/></text:p>
+   <text:p text:style-name="P18">| (pipe)<text:span text:style-name="T10"> → “Agrupa” comandos, passando o output de um para ser executado pelo próximo comando. Sempre da esquerda para a direita.</text:span></text:p>
+   <text:p text:style-name="P18"><text:span text:style-name="T10">Exemplo: </text:span>who | sort<text:span text:style-name="T10">: vai mostrar os usuários da máquina em ordem alfabética.</text:span></text:p>
+   <text:p text:style-name="P18">who | wc -l<text:span text:style-name="T10"> → vai mostrar o número de usuários online, já que é um por linha.</text:span></text:p>
    <text:h text:style-name="P2" text:outline-level="1">Tipos de acesso</text:h>
    <text:list xml:id="list2122722333" text:style-name="L1">
     <text:list-item>
@@ -493,27 +523,27 @@
      <text:p text:style-name="P19">w – write (escrever/modificar o conteúdo)</text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P19">x – exe (executar/acessar pelo comando <text:span text:style-name="T7">cd</text:span><text:span text:style-name="T6">)</text:span></text:p>
+     <text:p text:style-name="P19">x – exe (executar/acessar pelo comando <text:span text:style-name="T11">cd</text:span><text:span text:style-name="T10">)</text:span></text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="P22"/>
    <text:p text:style-name="P20">Existem 3 usu<text:span text:style-name="T1">ários: o main, o grupo e os outros; para cada um deles haverá uma tríade dizendo quais são suas permissões, dado um determinado arquivo. Se a linha começar com um ‘d’, tratam-se das permissões de um diretório, se começar com ‘-’ são as permissões de um arquivo. Exemplo</text:span></text:p>
-   <text:p text:style-name="P21">d<text:span text:style-name="T9">rwx</text:span><text:span text:style-name="T10">rwx</text:span><text:span text:style-name="T11">rwx</text:span></text:p>
-   <text:p text:style-name="P18"><draw:line text:anchor-type="paragraph" draw:z-index="0" draw:name="Linha 1" draw:style-name="gr1" draw:text-style-name="P26" svg:x1="1.593cm" svg:y1="-0.22cm" svg:x2="1.612cm" svg:y2="0.441cm">
+   <text:p text:style-name="P21">d<text:span text:style-name="T14">rwx</text:span><text:span text:style-name="T15">rwx</text:span><text:span text:style-name="T16">rwx</text:span></text:p>
+   <text:p text:style-name="P18"><draw:line text:anchor-type="paragraph" draw:z-index="0" draw:name="Linha 1" draw:style-name="gr1" draw:text-style-name="P29" svg:x1="1.593cm" svg:y1="-0.22cm" svg:x2="1.612cm" svg:y2="0.441cm">
      <text:p/>
-    </draw:line><draw:line text:anchor-type="paragraph" draw:z-index="1" draw:name="linha vertical 1" draw:style-name="gr1" draw:text-style-name="P26" svg:x1="2.556cm" svg:y1="-0.316cm" svg:x2="2.556cm" svg:y2="0.384cm">
+    </draw:line><draw:line text:anchor-type="paragraph" draw:z-index="1" draw:name="linha vertical 1" draw:style-name="gr1" draw:text-style-name="P29" svg:x1="2.556cm" svg:y1="-0.316cm" svg:x2="2.556cm" svg:y2="0.384cm">
      <text:p/>
-    </draw:line><draw:line text:anchor-type="paragraph" draw:z-index="2" draw:name="linha vertical 2" draw:style-name="gr1" draw:text-style-name="P26" svg:x1="3.254cm" svg:y1="-0.332cm" svg:x2="3.254cm" svg:y2="0.555cm">
+    </draw:line><draw:line text:anchor-type="paragraph" draw:z-index="2" draw:name="linha vertical 2" draw:style-name="gr1" draw:text-style-name="P29" svg:x1="3.254cm" svg:y1="-0.332cm" svg:x2="3.254cm" svg:y2="0.555cm">
      <text:p/>
-    </draw:line><text:span text:style-name="T6"/></text:p>
-   <text:p text:style-name="P23"><text:span text:style-name="T6">usuário <text:s text:c="4"/>grupo <text:s text:c="4"/>outros</text:span></text:p>
-   <text:p text:style-name="P23"><text:span text:style-name="T6"/></text:p>
+    </draw:line><text:span text:style-name="T10"/></text:p>
+   <text:p text:style-name="P23"><text:span text:style-name="T10">usuário <text:s text:c="4"/>grupo <text:s text:c="4"/>outros</text:span></text:p>
+   <text:p text:style-name="P23"><text:span text:style-name="T10"/></text:p>
    <text:p text:style-name="P11">s<text:span text:style-name="T1">ão as permissões de um diretório.</text:span></text:p>
    <text:p text:style-name="P11"/>
    <text:p text:style-name="P4">chmod u -rw arquivo.extens<text:span text:style-name="T1">ão</text:span></text:p>
    <text:p text:style-name="P4"><text:span text:style-name="T2">Retira do usuário as permissões de leitura e escrita do arquivo. Se tentar visualizar ou alterar, receberá a mensagem de ‘acesso negado’, por exemplo.</text:span></text:p>
    <text:p text:style-name="P4"><text:span text:style-name="T2"/></text:p>
-   <text:p text:style-name="P7"><text:span text:style-name="T2">Existe também o </text:span><text:span text:style-name="T4">modo octal</text:span><text:span text:style-name="T2"> de permissões, que associa um número para cada tipo e dá como resposta sua soma, que vai representar que permissões aquele usuário tem.</text:span></text:p>
+   <text:p text:style-name="P7"><text:span text:style-name="T2">Existe também o </text:span><text:span text:style-name="T8">modo octal</text:span><text:span text:style-name="T2"> de permissões, que associa um número para cada tipo e dá como resposta sua soma, que vai representar que permissões aquele usuário tem.</text:span></text:p>
    <text:p text:style-name="P8"><text:span text:style-name="T2">r – 4</text:span></text:p>
    <text:p text:style-name="P9"><text:span text:style-name="T2">w – 2</text:span></text:p>
    <text:p text:style-name="P10"><text:span text:style-name="T2">x – 1 </text:span></text:p>
@@ -526,7 +556,15 @@
    <text:h text:style-name="P3" text:outline-level="1">Processos no UNIX</text:h>
    <text:p text:style-name="P24">Para o unix, tudo <text:span text:style-name="T1">é processo e tudo é arquivo.</text:span></text:p>
    <text:p text:style-name="P24">Os processos podem estar em execuç<text:span text:style-name="T1">ão, em background ou suspensos. Você também pode ‘matar’ um processo em execução, seja no background ou no foreground.</text:span></text:p>
-   <text:p text:style-name="P25">PID<text:span text:style-name="T6"> → Process Identifier. Todo processo tem seu pr</text:span><text:span text:style-name="T2">óprio identificador e isso auxilia que se proceda operações com eles, como suspender ou terminar.</text:span></text:p>
+   <text:p text:style-name="P28">PID<text:span text:style-name="T10"> → Process Identifier. Todo processo tem seu pr</text:span><text:span text:style-name="T2">óprio identificador e isso auxilia que se proceda operações com eles, como suspender ou terminar.</text:span></text:p>
+   <text:h text:style-name="P3" text:outline-level="1">Find, history e echo</text:h>
+   <text:p text:style-name="P25">O <text:span text:style-name="T13">find</text:span><text:span text:style-name="T9"> </text:span><text:span text:style-name="T8">é um comando para pesquisar em diretórios por arquivos ou outras pastas, de acordo com os parâmetros passados a ele. Esses parâmetros podem ser </text:span><text:span text:style-name="T3">name, date, size </text:span><text:span text:style-name="T5">e </text:span><text:span text:style-name="T3">type</text:span><text:span text:style-name="T5">. Caso nenhum atributo seja especificado, ele pesquisará tudo o que estiver dentro do diretório atual.</text:span></text:p>
+   <text:p text:style-name="P26"><text:span text:style-name="T5"/></text:p>
+   <text:p text:style-name="P26"><text:span text:style-name="T5">O </text:span><text:span text:style-name="T6">history</text:span><text:span text:style-name="T5"> é um comando que mostra o histórico de comandos que foram executados no terminal.</text:span></text:p>
+   <text:p text:style-name="P26"><text:span text:style-name="T5"/></text:p>
+   <text:p text:style-name="P27"><text:span text:style-name="T7">echo</text:span><text:span text:style-name="T5"> é um comando utilizado em scripts ou no terminal para exibir mensagens na tela ou em um arquivo. Tambémm pode inserir no arquivo.</text:span></text:p>
+   <text:p text:style-name="P24"><text:span text:style-name="T5"/></text:p>
+   <text:p text:style-name="P25"><text:span text:style-name="T5"/></text:p>
    <text:p text:style-name="P15"/>
   </office:text>
  </office:body>
