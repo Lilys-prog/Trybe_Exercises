@@ -1,2 +1,5 @@
 1 - Água
 2 - Suco de Laranja
+3 - Suco de Maracujá
+4 - Suco de Taperebá
+5 - Sprite
