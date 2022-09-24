@@ -1,7 +1,9 @@
-const assert = require('assert'); // Sintaxe para incluir o módulo assert
+// const assert = require('assert'); // Sintaxe para incluir o módulo assert
 
-assert.strictEqual(50, 50); // Sem erros: 50 === 50
-assert.strictEqual(50, 70); // AssertionError: 50 !== 70
+// assert.strictEqual(50, 50); 
+// // Sem erros: 50 === 50
+// assert.strictEqual(50, 70); 
+// // AssertionError: 50 !== 70
 
 
 // o assert é impraticável no munddo corporativo, surgiu então o jest, que é uma suíte de testes mais robusta, legível e de fácil manutenção. Ele é um framework de testes.
@@ -19,6 +21,5 @@ assert.strictEqual(50, 70); // AssertionError: 50 !== 70
 // sum.js
 const sum = (a, b) => a + b;
 
-test('soma dois valores', () => {
-  expect(sum(2, 3)).toEqual(5);
-});
+module.exports = sum;
+// esta linha permite que a funçção seja exportada e usada em outros módulos
