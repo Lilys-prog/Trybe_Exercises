@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664111276549" clover="3.2.0">
-  <project timestamp="1664111276549" name="All files">
-    <metrics statements="7" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2" elements="13" coveredelements="5" complexity="0" loc="7" ncloc="7" packages="1" files="1" classes="1"/>
+<coverage generated="1664115872207" clover="3.2.0">
+  <project timestamp="1664115872207" name="All files">
+    <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="13" coveredelements="13" complexity="0" loc="7" ncloc="7" packages="1" files="1" classes="1"/>
     <file name="calculator.js" path="/home/lyli/trybe/trybe_exercises/fundamentos/bloco7_JSES6/coberturaTestes/calculator.js">
-      <metrics statements="7" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <line num="4" count="1" type="stmt"/>
       <line num="8" count="3" type="stmt"/>
-      <line num="12" count="0" type="stmt"/>
-      <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="17" count="0" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="16" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
     </file>
   </project>
