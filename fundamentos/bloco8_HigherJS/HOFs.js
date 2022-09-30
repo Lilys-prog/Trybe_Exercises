@@ -116,5 +116,36 @@ console.log(numberGenerator);
 
 
 // Lembre-se de que o fato de o JavaScript tratar funções como cidadãs de primeira classe nos permite inseri-las em variáveis.
+// o addEventListener é uma HOF pq aceita 2 parâmetros, um será o evento (click, keyup, etc) e outro vai ser uma função. Ou seja, uma função no papel de parâmetro. A função que recebe outra como parâmetro ou como retorno é, por definição, uma HOF. A função que será usada como parâmetro ou retorno é chamada de 'callback'.
 
+// Existem funções HOF que são padrão no JS e pode-se criar outras, próprias.
 
+//
+// EXEMPLO SEM HOF, PARA TRABALHAR:
+//
+const sum = (num1, num2) => num1 + num2;
+const sub = (num1, num2) => num1 - num2;
+
+// console.log(sum(10, 5));
+// console.log(sub(10, 5));
+
+// fazendo como hof
+
+const calculator = (func) => func(10, 5); 
+
+console.log(calculator(sum));
+
+// a função chamada dentro de callback será uma função parâmetro da função calculator. Sendo assim, calculator é uma HOF. Isso pode ser feito tb com a função sub ou com qualquer outra que seja criada. Essa é a vantagem das hofs, elas podem chamar qualquer função como parâmetro ou como retorno.
+// a callback não usa os parênteses ao ser chamada dentro da hof
+
+// tentando por minha conta (funcionou perfeitamente)
+
+const doingThings = (act) => act();
+
+const wakeUp = () => 'Acordando!!';
+const coffee = () => 'Bora tomar café!!';
+const sleep = () => 'Partiu dormir!!';
+
+console.log(doingThings(wakeUp));
+console.log(doingThings(coffee));
+console.log(doingThings(sleep));
