@@ -8,6 +8,5 @@ const greetingPeople = require('./Aula_ao_vivo');
 describe('Testa a função greetingPeople', () => {
   it('Veriifica se ao ser chamada a função retorna a mensagem `Oláááááá,, enfermeira!`', () => {
     expect(greetingPeople()).toBe('Oláááááá,, enfermeira!');
-
-  })
-})
+  });
+});

@@ -1,4 +1,21 @@
-const greetingPeople = () => {
-  return 'Oláááááá,, enfermeira!';
+
+// const greetingPeople = () => 'Oláááááá, enfermeira!';
+
+// module.exports = (greetingPeople);
+
+// =========================================
+// =========================================
+// =========================================
+
+const greeting = (callback) => {
+  return callback();
 }
-module.exports = {greetingPeople};
+
+const defaultGreeting = () => 'Olá, como vai você?';
+
+const badMoodGreeting = () => 'Rum!';
+
+const loveGreeting = () => 'Oi, bb';
+
+
+module.exports = (greeting, loveGreeting, badMoodGreeting, defaultGreeting);
