@@ -1,3 +1,8 @@
+// Existem três formas de declarar variáveis em Javascript:
+  // var userEmail = 'maria@email.com';
+  // let userId = '78945-6';
+  // const userLocation = 'Brasil';
+
 function userInfo() {
   let userEmail = 'maria@email.com';
 
@@ -25,15 +30,17 @@ console.log(userAge); // 20 - usando 'let' para declarar a variável, esta linha
 var userName = 'Isabella';
 var userName = 'Lucas';
 console.log(userName); // Resultado: Lucas
+// Em aplicações maiores ao usar o var, você pode REDECLARAR variáveis acidentalmente e nem perceber o que aconteceu. Por isso, encontrar e corrigir bugs pode se tornar uma verdadeira missão impossível. Por estes motivos, declarar variáveis com o var não é uma boa prática.
+// O ES6 corrige esse problema ao introduzir o let e o const, fazendo com que uma variável, com um nome específico, só possa ser declarada UMA ÚNICA VEZ dentro de um escopo.
 
 
-// usando o 'let' e o 'const' não há chance de redeclaração acidental, pois dará erro. 'Const' não pode ter seiu valoor alterado, mas 'let' sim
+// usando o 'let' e o 'const' não há chance de redeclaração acidental, pois dará erro. 'Const' não pode ter seu valoor alterado, mas 'let' sim
 const favoriteLanguage = 'Javascript';
-favoriteLanguage = 'Python';
+favoriteLanguage = 'Python';  //tentativa de reassign
 console.log(favoriteLanguage); // Erro
 
 let favoriteTechnology = 'Machine learning';
-favoriteTechnology = 'Facial recognition';
+favoriteTechnology = 'Facial recognition';  //reassign
 console.log(favoriteTechnology); // Facial recognition
 
 
@@ -48,7 +55,6 @@ userInfo.name = 'João'; // usando método para atriibuir novo valor à chave Jo
 
 console.log(userInfo); // { name: 'João', id: '5489-2', email: 'claudio@email.com' }
 
-//
 // Esse raciocínio também se aplica a um array. Podemos alterá-lo indiretamente adicionando/removendo um novo item sem sobrescrever o que já foi declarado
 // aqui usou-se o método push para adicionar um novo elemento
 const technologies = ['Javascript', 'CSS', 'HTML'];
@@ -58,7 +64,7 @@ console.log(technologies); // [ 'Javascript', 'CSS', 'HTML', 'React' ]
 // aqui tentou-se atribuir um novo valor de array
 technologies = ['Javascript', 'CSS', 'HTML', 'React']
 console.log(technologies); // Erro
-//
+
 
 //hoisting é um 'erro' que acontece quando se usa 'var'. Se as variáveis forem declaradas fora de uma função elas viram variáveis globais e se forem dentro de uma função vão para o topo do escopo local da função, 'vazando' para os blocos de código presentes nela
 
