@@ -9,6 +9,8 @@
 
 // Uma das aplicações para arrow functions é em funções anônimas. Chamamos funções sem um nome específico de funções anônimas, como a função acima.
 
+// Em Javascript, é muito comum não precisarmos nomear funções, como mostrado no exemplo acima. Isso pode acontecer quando criamos funções que não serão reutilizadas, ou que serão passadas como argumento para uma outra função. Chamamos funções sem um nome específico de funções anônimas.
+
 // =============================================================
 
 // As arrow functions nada mais são do que uma forma diferente de declarar funções escrevendo menos código. Veja abaixo como ficaria a função printName utilizando a sintaxe da arrow function:
@@ -28,16 +30,50 @@
 const printName = () => 'Lucas';
 console.log(printName());
 
-//Mas lembre-se de que podemos omitir os parênteses apenas em um cenário:
+//Mas lembre-se de que podemos omitir os parênteses de parâmetro apenas em um cenário:
 //Quando a função recebe apenas um argumento, como podemos ver no exemplo abaixo:
 const multiplyByTwo = number => number * 2;
 console.log(multiplyByTwo(10));
+// mas essa omissão é opcional
+
+// função comum
+function contaPalavras (frase) {
+  return frase.split(' ').length;
+}
+console.log(contaPalavras('Fala tribo, beleza?'));
+
+// mesma função, como arrow
+const contaPalavras = frase => frase.split(' ').length;
+console.log(contaPalavras('Fala tribo, beleza?'))
+
+
+// função comum que cria um objeto
+function objetoPessoa (nome, idade) {
+  return {
+    nome: nome,
+    idade: idade
+  }
+}
+console.log(objetoPessoa('Joaquim', 25));
+
+
+// arrow function que cria o mesmo objeto
+const objetoPessoa = (nome, idade) => ({nome: nome, idade: idade});  // parênteses
+console.log(objetoPessoa('Joaquim', 25));
+// é necessário colocar o objeto dentro de parênteses para que a função entenda que se trata de um objeto e não do corpo da função entre chaves
+
 
 //============================
 
-// Em funções que recebem mais de um parâmetro, os parênteses não são omitidos:
+// Em funções que recebem mais de um parâmetro, os parênteses obrigatoriamente não são omitidos:
 const multiplication = (number, multi) => number * multi;
 console.log(multiplication(8, 2));
+
+
+
+
+
+
 
 // ================================================================
 // OPERADOR TERNÁRIO + ARROW FUNCTIONS
