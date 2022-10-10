@@ -126,3 +126,15 @@ console.log(checkTernary(banana))
 // pois torna o seu código truncado e difícil de ler, tirando todo o sentido de um
 // operador cujo objetivo é facilitar a sua vida e a da pessoa que lerá seu código
 // no futuro!
+
+
+
+
+
+// ====================================================================
+
+
+// uma outra forma de usar duas sentenças verdadeiras para um resultado único é usando o operador &&
+let idade = 21;
+console.log(idade >= 18 && 'Você já pode dirigir');
+// no caso da idade ser menor do que 18, a sentença retornará o boolean 'false' como resposta. Desta forma, essa simplificação ajuda ainda mais o código e traz a resposta adequada
