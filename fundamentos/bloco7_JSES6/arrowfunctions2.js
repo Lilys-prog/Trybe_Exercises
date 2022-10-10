@@ -77,3 +77,7 @@ const f3 = _ => 'Olá, mundo!';
 // o espaço onde o parâmetro ficaria é preenchido pelo underline
 console.log(f3());
 // mas o console.log ainda usa o parênteses
+
+
+
+// uma das vantagens de colocar uma função dentro de uma constante é que a constante não permite que aconteça hoisting.
