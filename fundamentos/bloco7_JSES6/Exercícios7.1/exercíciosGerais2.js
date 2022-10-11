@@ -19,3 +19,17 @@
 // Imprima no terminal “Esse é o fatorial resultado da função“ (Lembre-se de utilizar template literals nesse momento).
 
 // Bônus: tente fazer o mesmo exercício de forma recursiva. Spoiler: É possível resolver com uma linha usando ternary operator.
+
+
+const fatorial = (n) => {  
+  let result = 1;
+  for (let i = n; i > 0; i -= 1) {    
+    result *= i;   
+  }  
+  return result;  
+}
+console.log(fatorial(3));
+
+
+
+
