@@ -1,0 +1,108 @@
+Dia 7.1 - Fluxo de exceções e manipulação de objetos
+
+		O que fazer se o usuário colocar no programa uma informação inválida? O programa simplesmente vai crashar? Não existe uma forma de mantê-lo em funcionamento e avisar ao usuário do erro cometido?
+		
+	O FLUXO DE EXCEÇÃO é uma forma de tratar os erros no código e/ou sua aplicação usando os métodos THROW e TRY/CATCH.
+	
+	Também serão aprendidos os métodos:
+		- Object.keys;
+		- Object.entries;
+		- Object.assign;
+		- Object.values.
+		
+-------------------------------------------------------------------------------
+
+Você será capaz de:
+
+	- Lançar erros com throw e capturá-los com o bloco try/catch;
+
+	- Acessar todas as chaves de um objeto com o método Object.keys;
+
+	- Acessar os pares chave-valor de um objeto com o método Object.entries;
+
+	- Acessar todos os valores de um objeto com o método Object.values;
+
+	- Copiar um objeto com o método Object.assign;
+
+	- Adicionar propriedades a um objeto.
+	
+-------------------------------------------------------------------------------
+
+INTRODUÇÃO A FLUXO DE EXCEÇÃO E OBJETOS
+
+Throw e Try/Catch
+
+												const sum = (value1, value2) => {
+													return value1 + value2;
+												};
+
+// Utilizando arrow functions, foi criada uma função, definiu que ela recebe dois parâmetros e que retorna a soma entre eles.
+
+Para que a função funcione é necessário que sejam inseridos dois números. Mas como assegurar que qualquer um saiba disso? Alguém pode inserir um número e uma string e o programa vai retornar uma concatenação de strings.
+Esse comportamento ocorre porque o JavaScript é considerado uma linguagem dinâmica. Ou seja, quando se declara uma variável, não é necessário definir o tipo de dado, o que permite que ela mude de tipo ao longo da execução do código.
+O programador deve ser capaz de prever esses erros e impedí-los de ocorrer (o código tem que ser à prova de bios)
+
+											const sum = (value1, value2) => {
+												if (typeof value1 !== 'number' || typeof value2 !== 'number') {
+													return 'Os valores devem ser numéricos';
+												}
+												return value1 + value2;
+											};
+											console.log(sum(2, '3'));
+											
+Perceba que foi adicionado ao código a condicional if, para verificar se o tipo de informação recebida nos parâmetros é diferente de number. Se o primeiro ou o segundo parâmetro for diferente de number, o seu código avisa para a pessoa usuária que a função sum só aceita números.
+
+--------------------------------------------------------------------------------------------------
+
+Para tratar erros em um código JavaScript, precisamos do fluxo de exceção. Para isso, podemos interromper o funcionamento do código e lançar um erro por meio do throw new Error, que cria e lança um objeto de erro.
+
+
+									const sum = (value1, value2) => {
+									  if (typeof value1 !== 'number' || typeof value2 !== 'number') {
+										throw new Error('Os valores devem ser numéricos');
+									  }
+									  return value1 + value2;
+									};
+
+									console.log(sum(2, '3'));
+									
+// esse é o fluxo de exceção, ele vai jogar no console uma penca de informações, inclusive a mensagem e onde o erro ocorreu. Dessa forma é possível ver onde o código parou de executar.
+
+Vamos recapitular o que foi feito até aqui:
+
+		A palavra reservada throw serve para lançar uma exceção. No caso, definimos que essa exceção deveria acontecer caso algum parâmetro não fosse do tipo number, e então criamos esse “erro customizado”. Caso contrário, a função sum apresentaria um comportamento incorreto, pois não realizaria a soma dos valores corretamente.
+
+		O operador new serve para criar um objeto personalizado ou nativo do JavaScript.
+
+		A palavra Error é um objeto nativo do JavaScript que representa um erro. Quando você o chama com o operador new, você cria uma cópia desse objeto, que será lançada como uma exceção no seu código.
+
+=======================================================================
+
+Até aqui, você programou o código para lançar uma exceção caso algo inesperado aconteça, e esse erro é exibido apenas no console. Dessa maneira, a pessoa usuária não consegue saber que algum erro aconteceu. Portanto, além de lançar o erro, é necessário capturá-lo e tratá-lo. Ao tratar o erro, você consegue informar para a pessoa usuária que algo deu errado.
+
+É aí que entra o bloco try/catch. Enquanto o try tenta executar o código com sucesso, o catch é executado caso um erro seja lançado.
+
+										const verifyIsNumber = (value1, value2) => {
+										  if (typeof value1 !== 'number' || typeof value2 !== 'number') {
+											throw new Error('Os valores devem ser numéricos'); 
+											// através do construtor `new Error` já sabemos que será lançada a mensagem se algo der errado.
+										  }
+										};
+
+										const sum = (value1, value2) => {
+										  // o `try` vai executar a função verifyNumber e retornar a soma caso os parâmetros sejam números
+										  try { 
+											verifyIsNumber(value1, value2);
+											return value1 + value2;
+										  // se o bloco `try` apresentar erro, o `catch` vai capturar esse erro e retornar a mensagem já criada através da propriedade `.message` nativa do objeto Error.
+										  } catch (error) {
+											return error.message;
+										  }
+										};
+
+				console.log(sum(2, '3'));
+				
+Dessa forma, só a mensagem de erro aparece para o usuário, sem toda a parafernalha para o console.
+Agora sim! Você criou um fluxo para quando o código é executado com sucesso e também para o caso de acontecer algo inesperado. O catch impede que o código simplesmente quebre, ele tras de volta o erro que foi criado no começo do código, na função de verificar valores.
+
+O bloco try representa o fluxo de quando o código é executado com sucesso. Ele tenta fazer a soma de dois valores e verifica, por meio da função verifyIsNumber, se os parâmetros passados são números. Se forem, realiza a soma. Caso contrário, se um dos valores não for um número, o código lança um erro com o throw, que é capturado pelo bloco catch no fluxo de exceção. O catch recebe um parâmetro que chamamos de error (aqui podemos usar qualquer nome, porém error é mais semântico) e retornamos a chave error.message. A propriedade message é nativa do objeto Error e contém a mensagem de erro definida por você ao lançar o erro com o throw.

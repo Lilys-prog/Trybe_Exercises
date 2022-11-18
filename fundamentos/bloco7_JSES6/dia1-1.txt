@@ -1,0 +1,21 @@
+MANIPULAÇÃO DE OBJETOS - ADICIONANDO NOVAS CHAVES
+(lembrando que objetos são pares chave-valor)
+
+Considere o seguinte código para cadastro de clientes:
+
+														const customer = {
+														  firstName: 'Roberto',
+														  age: 22,
+														  job: 'Teacher',
+														};
+													
+No entanto, o objeto também deveria ter sobrenome como uma das chaves. O que fazer?
+Em um objeto simples pode-se simplesmente reescrever o código e adicionar a chave, mas em códigos maiores e mais complexos e nos quais se precise adicionar mais do que uma chave isso pode não ser possível.
+
+Para acessar informações de um obbjeto qualquer pode-se usar uma das notações:
+
+  - objeto.nomeDaPropriedade
+
+  - objeto[stringQueContemONomeDaPropriedade]
+  
+Da mesma forma pode-se usar essa notação para adicionar uma propriedade nova.
