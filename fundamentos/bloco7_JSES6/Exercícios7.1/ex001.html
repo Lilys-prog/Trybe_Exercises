@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Calculadora</title>
+</head>
+
+<body>
+  <p>Informe dois números para realizar a soma:</p>
+  <label for='value1'>Valor 1:</label>
+  <input type='text' id='value1'>
+  <label for='value2'>Valor 2:</label>
+  <input type='text' id='value2'>
+  <button id='button'>Somar</button>
+  <p id='result'></p>
+
+  <script>
+    // function sum() {
+    //   const value1 = document.getElementById('value1').value;
+    //   const value2 = document.getElementById('value2').value;
+    //   const result = Number(value1) + Number(value2);
+    //   document.getElementById('result').innerHTML = `Resultado: ${result}`;
+    //   document.getElementById('value1').value = '';
+    //   document.getElementById('value2').value = '';
+    // }
+    // window.onload = () => {
+    //   const button = document.getElementById('button');
+    //   button.addEventListener('click', sum);
+    // }
+
+    // ===================================================================================
+    //GABARITO
+
+      // primeiro criar uma função que receba os dois valores inputs como parâmetro (os que estão no html - value1 e value2). Arrow functions, presta atenção na estrutura pra parar de esquecer como é.
+      // depois de feita a função e lançado o erro caso falte alguém valor, cria-se outra regra pro caso de algum deles não ser numérico
+      const verifyIsNumber = (value1, value2) => {
+        if (!value1 || !value2) {   // ou seja, se um dos 2 não existir, não for preenchido
+          throw new Error('Preencha os campos para realizar a soma'); // esse é o erro descritivo de faltar algo
+        }
+        if (isNaN(value1) || isNaN(value2)) {
+          throw new Error('Informe dois números para realizar a soma'); // erro descritivo de um valor não numérico
+        }
+
+      }
+
+
+      // os try/catch serão adicionados a esta função, que é a função principal para realizar o que se quer, que é a soma. O try vai tentar realizar o fluxo normal da função e, caso encontre algum erro, o catch entra em ação com o erro descritivo correspondente.
+      const sum = () => {
+        try {
+          // as duas linhas abaixo recuperam os valores dos inputs
+          const value1 = document.getElementById('value1').value;
+          const value2 = document.getElementById('value2').value;
+          verifyIsNumber(value1, value2); // executa a função feita acima em busca de erros
+          //o try tenta executar a soma entre os dois valores e seguir o fluxo normal
+          const result = Number(value1) + Number(value2);
+          // apresenta o resultado caso tudo esteja certo
+          document.getElementById('result').innerHTML = `Resultado: ${result}`;
+          // vai ser chamado se for encontrado algo errado na função verifyIsNumber
+        } catch (error) {
+          // vai lançar a mensagem de erro para o usuário, caso exista erro
+          document.getElementById('result').innerHTML = `Erro: ${error.message}`
+        } finally {
+          // o finally vai apagar os valores que estão dentro dos inputs, tenha dado certo ou erro, depois que a função rodar e o resultado aparecer e aí ela vai estar pronta pra receber novos inputs
+         document.getElementById('value1').value = '';
+         document.getElementById('value2').value = '';
+        }
+      }
+
+      // onload quer dizer que assim que a página carregar a função vai ser carregada. Aqui se está trabalhando com addEventListener, quer dizer que o js nem precisava estar aqui nessa mesma página do html, poderia estar em uma página exclusiva e ser chamado.
+      window.onload = () => {
+        const button = document.getElementById('button');
+        button.addEventListener('click', sum);
+      }
+
+  </script>
+
+</body>
+</html>
