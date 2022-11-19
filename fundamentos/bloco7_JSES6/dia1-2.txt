@@ -1,0 +1,58 @@
+Comandos para manipulação de objetos
+
+Object.keys
+Este comando produz um ARRAY composto por todas as chaves do objeto, e somente as chaves. Ele é uma "simplificação" do uso do 'for..in':
+
+for (const property in coolestTvShow) {
+	console.log(property);
+}
+
+ao invés disso, usa-se somente
+
+Object.keys(coolestTvShow)
+
+========================================================================
+
+Object.values
+
+Segue a mesma linha de raciocínio que o keyys, mas desta vez mostra somente os valores, sem as chaves. O 'for..in' seria:
+
+for (const property in coolestTvShow) {
+	console.log(coolestTvShow[property]);
+}
+
+e fica:
+
+Object.values(coolestTvShow)
+
+========================================================================
+
+Object.entries
+
+Retorna um array de arrays onde cada elemento é um par chave-valor do objeto.
+A primeira entrada de cada array é a chave do objeto em formato de string, e o segundo elemento é seu respectivo valor, que pode ser uma string ou outro tipo de dado.
+
+========================================================================
+
+Object.assign
+
+Esse método é utilizado para copiar os valores de todas as propriedades de um ou mais objetos para um objeto destino. 
+Ou seja, podem ser vários objetos sendo copiados para um objeto destino. Também se pode criar um clone do objeto destino, mas o original será alterado sempre que o clone for, pois eles são o mesmo objeto.
+
+Sua estrutura é:
+
+// A função recebe um número qualquer de parâmetros. Todos são agregados como valores para adicionar ao objeto de destino.
+
+Object.assign(destino, objeto1);
+Object.assign(destino, objeto1, objeto2);
+Object.assign(destino, objeto1, objeto2, objeto3, objeto4);
+
+O objeto de destino é sempre o primeiro da lista e pode ser um objeto vazio {}.
+
+Quando houver chaves repetidas, o valor que permanecerá será sempre o último a ser introduzido.
+
+---------------------------
+
+Como fazer para copiar um objeto, alterá-lo comm assign e não mexer no original?
+
+Para resolver esse problema, podemos passar como primeiro parâmetro do Object.assign um objeto vazio {} e armazenar seu retorno em uma nova variável. Veja como fazer isso no exemplo abaixo.

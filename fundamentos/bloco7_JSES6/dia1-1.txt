@@ -19,3 +19,7 @@ Para acessar informações de um obbjeto qualquer pode-se usar uma das notaçõe
   - objeto[stringQueContemONomeDaPropriedade]
   
 Da mesma forma pode-se usar essa notação para adicionar uma propriedade nova.
+
+const adicionarPropriedade = (objeto, chave, valor) => {
+		objeto[chave] = valor;
+};
