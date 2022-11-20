@@ -106,3 +106,8 @@ Dessa forma, só a mensagem de erro aparece para o usuário, sem toda a parafern
 Agora sim! Você criou um fluxo para quando o código é executado com sucesso e também para o caso de acontecer algo inesperado. O catch impede que o código simplesmente quebre, ele tras de volta o erro que foi criado no começo do código, na função de verificar valores.
 
 O bloco try representa o fluxo de quando o código é executado com sucesso. Ele tenta fazer a soma de dois valores e verifica, por meio da função verifyIsNumber, se os parâmetros passados são números. Se forem, realiza a soma. Caso contrário, se um dos valores não for um número, o código lança um erro com o throw, que é capturado pelo bloco catch no fluxo de exceção. O catch recebe um parâmetro que chamamos de error (aqui podemos usar qualquer nome, porém error é mais semântico) e retornamos a chave error.message. A propriedade message é nativa do objeto Error e contém a mensagem de erro definida por você ao lançar o erro com o throw.
+
+
+É interessante criar sempre duas funções, uma que cuide só de detectar erros.
+
+(preciso estudar mais o finally)

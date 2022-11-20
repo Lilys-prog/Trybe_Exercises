@@ -59,8 +59,8 @@
           // apresenta o resultado caso tudo esteja certo
           document.getElementById('result').innerHTML = `Resultado: ${result}`;
           // vai ser chamado se for encontrado algo errado na função verifyIsNumber
-        } catch (error) {
-          // vai lançar a mensagem de erro para o usuário, caso exista erro
+        } catch (error) { 
+          // vai lançar a mensagem de erro para o usuário, caso exista erro. O nome do parâmetro não precisa ser 'error', mas é bem facim. 'error.message' é o que faz aparecer na tela o erro
           document.getElementById('result').innerHTML = `Erro: ${error.message}`
         } finally {
           // o finally vai apagar os valores que estão dentro dos inputs, tenha dado certo ou erro, depois que a função rodar e o resultado aparecer e aí ela vai estar pronta pra receber novos inputs
