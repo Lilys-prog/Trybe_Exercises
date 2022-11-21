@@ -31,4 +31,65 @@ Mas como garantiir a presença dessas qualidades, antes mesmo de enviiar para o 
 
 TESTE UNIITÁRIO
 		Ajudam a ter um códico maiiis organizado, minimizam o risco de ddar erro e o esforço ao realizar mudanças no códiigo. A ferramenta utlizada na trybe será o JEST, criado pelo facebook como open source, mas usado uniiversalmente hoje em diia.
+		
+		Você será capaz de
+- Entender o que são e para que servem testes unitários;
+
+- Aplicar o conceito de TDD, ou seja, o desenvolvimento orientado a testes;
+
+- Criar testes unitários a partir do framework Jest.
+
+Eles têm a função de validar o comportamento do nosso código de forma sólida e precisa. Testes unitários são porções de código responsáveis por validar o comportamento de unidades funcionais de código.
+
+Nesse contexto, entende-se como unidade funcional qualquer porção de código que, através de algum estímulo, seja capaz de gerar um comportamento esperado. Isso inclui funções, propriedades, construtores… tudo que, de alguma maneira, processe um comportamento de valor e que você deseje garantir que, apesar das alterações em nível de código, o comportamento siga sendo o mesmo.
+
+Portanto, os testes unitários, assim como qualquer teste automatizado, permitem uma melhor manutenção do seu código. Eles não servem somente para verificar se uma função específica está funcionando, mas também para garantir que sua aplicação continue funcionando após alguma alteração. Sendo assim, é interessante pensar neles como um investimento de tempo para o futuro.
+
+O teste não vai garantir que sua aplicação não quebre, mas vai te ajudar a evitar que isso aconteça. Além disso, ao ajustar um problema na sua aplicação, você executa todos os testes novamente para verificar se estão passando, evitando que outros problemas surjam.
+
+Além disso, você vai exercitar a sua lógica para prevenir problemas e prever os fluxos que uma pessoa pode percorrer ao usar a sua aplicação. Isso diminui as chances de gerar bugs ou escrever códigos que precisarão ser refeitos depois.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+FOCO EM QUALIDADE
+
+Basicamente, existem três dimensões de qualidade que precisam ser consideradas:
+
+	- CONFIANÇA: O sistema é resistente a falhas durante a execução, isto é, não entra em loop, não interrompe a execução por falta de recursos.
+	- FUNCIONALIDADE: O sistema se comporta conforme o que foi definido em seus requisitos.
+	- PERFORMANCE: O sistema tem um tempo de resposta adequado e aceitável, mesmo quando submetido a um volume de processamento semelhante a situações reais ou de pico de uso.
+
+E, para atender a essas três dimensões, a pessoa que programa tem uma nova tarefa: desenvolver com foco em qualidade.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+TESTANDO EM PEQUENOS PASSOS
+
+O TDD: Test Driven Development, em tradução livre, desenvolvimento orientado a testes, é uma técnica de desenvolvimento em que você primeiro cria os testes e depois seu código. Em certos cenários esse método favorece a produtividade e a escrita de códigos confiáveis. Essa técnica é interessante porque ajuda a criar uma mente programadora orientada a testes, ainda que o TDD não seja aplicado para todas as situações de testes.
+
+O TDD é muito importante como EXERCÍCIO e para determinados tipos de projetos, mas está longe de ser consenso na comunidade programadora como prática fundamental para 100% dos casos. É importante que essa visão crítica fique bem nítida.
+
+	Ele segue uma liinha simples, vc cria o teste e ele falha. Então vc cria um código para qque o teste funcone. Depois disso vc refatora para fazer um código mais siimples, depois testa de novo (ciclo TDD)
 	
+----------------------------------------------------------------------------------------------
+
+Destrinchando cada etapa, o TDD consiste em:
+
+- Escrever um teste que cubra a função que você pretende implementar antes mesmo de implementá-la. Esse teste irá falhar - afinal, a sua função ainda não foi declarada. Você pode começar do teste mais elementar possível para esse cenário, como verificar se a função que você irá criar existe.	
+
+- Implementar apenas o necessário para que o teste passe. No caso do exemplo anterior, você só precisaria declarar a função para passar o teste.
+
+- Refatorar o código para que ele esteja bem escrito e fácil de se entender. A ideia central nessa etapa é que você tenha um teste já implementado que irá falhar caso você quebre algo ao refatorar o seu código.
+
+- Repetir! Afinal de contas, o desenvolvimento orientado a testes é um ciclo. Volte à etapa 1 e repita esse processo até que todas as funcionalidades da sua função sejam implementadas.
+
+-----------------------------------------------------------------------------------------------------------
+
+O que são funções puras? São funções cujo resultado é determinado puramente pelos argumentos passados a elas, ou seja, o retorno é sempre previsível. Por exemplo, uma função que retorna o dobro do valor recebido como argumento. Então, sempre que o argumento for 2, o valor de retorno será 4.
+
+De outro modo, se a função acessa ou modifica qualquer coisa que não tenha sido passada como parâmetro a ela, é então uma função impura.
+
+Além de ser útil para testar funções puras, outro exemplo prático em que o desenvolvimento orientado a testes pode ser útil é consertar bugs. Os testes ajudam a quebrar problemas complexos em partes menores, que podem ser analisadas mais facilmente. Assim, você poderá focar em uma regra de negócio específica sem medo de quebrar alguma outra funcionalidade.
+
+----------------------------------------------------------------------------------------------------------------------
+

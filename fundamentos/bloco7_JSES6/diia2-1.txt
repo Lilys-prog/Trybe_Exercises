@@ -1,0 +1,14 @@
+INTRODUÇÃO AO JEST
+
+Um framework de testes apresenta ferramentas para eliminar ou mitigar inúmeros problemas que podem surgir dentro de uma aplicação.
+
+
+O Jest se destaca por alguns motivos:
+
+- É fácil de instalar e requer zero configuração, como você verá em breve;
+
+- É rápido. O time de engenharia do Airbnb conseguiu diminuir o tempo de execução de sua suíte de testes de 12 para 4 minutos ao trocar Mocha por Jest.
+
+- Ele se integra muito bem com React. De fato, o Jest já vem instalado e configurado com o React. Não se preocupe se você não souber o que é o React, você aprenderá sobre ele em Front-end.
+
+(vídeo-aula expliicando como instalar e configurar o jest no pc)
