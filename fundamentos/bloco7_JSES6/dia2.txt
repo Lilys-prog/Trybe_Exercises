@@ -1,0 +1,34 @@
+PRIMEIROS PASSOS EM JEST
+
+Hoje você vai entrar no importante e transformador mundo dos testes unitários!
+
+Mas afinal: o que é teste unitário?
+
+Teste unitário é uma das maneiras de realizar testes. Ele tem como objetivo testar pequenas partes do seu código de forma isolada, como, por exemplo, uma função. Dessa maneira, você simula as entradas e as saídas que a função deve ter.
+
+Você também vai aprender o conceito de TDD ou Test Driven Development (Desenvolvimento Orientado a Testes), em que você primeiro cria o teste, definindo o comportamento que seu código deve ter, para depois criar o código de fato.
+
+-------------------------------------------------------------------------------------------------------------
+
+Existe um ISO (9126) para avaliar a qualidade de um software. Ele leva em consideração PRIMEIRAMENTE a presença de 5 qualidades:
+
+	- Funcionalidade: como um software vai funciionar em condições específicas;
+	- Desempenho: o desempenho do programa, por exemplo, como ele responde a múltiiplos acessos à aplicação?
+	- Usabilidade: a faciliidade qque a pessoa usuária vai ter ao utilizar o software.
+	- Manutenção: mede se o software pode ou não ser modficado, se é possível inicluir melhoriias e adaptações.
+	- Portabilidade: capacidade de transferir o proograma de um ambiente pra outro, tipo OS.
+	
+--------------------------------------------------------------------------------------------------------------
+	
+Mas como garantiir a presença dessas qualidades, antes mesmo de enviiar para o usuário? Desenvolvem-se testes para verficar. Alguns são:
+
+	- de aceitação: é feiito antes da liberação e verifiica se o teste atende as necessidades do usuário.
+	- de estresse: expõe o software à situações liiimiites, para avaliá-lo.
+	- de integração: veriifica o proograma como um todo, se está acessando o banco de ddados, fazendo uma camada externa a outros sistemas, etc.
+	- TESTE UNITÁRIO: é o maiis importante, verifica cada parte do código e se o RETORNO está de acordo com o esperado.
+	
+---------------------------------------------------------------------------------------------------------------
+
+TESTE UNIITÁRIO
+		Ajudam a ter um códico maiiis organizado, minimizam o risco de ddar erro e o esforço ao realizar mudanças no códiigo. A ferramenta utlizada na trybe será o JEST, criado pelo facebook como open source, mas usado uniiversalmente hoje em diia.
+	

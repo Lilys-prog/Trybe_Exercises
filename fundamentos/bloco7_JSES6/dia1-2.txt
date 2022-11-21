@@ -55,4 +55,4 @@ Quando houver chaves repetidas, o valor que permanecerá será sempre o último 
 
 Como fazer para copiar um objeto, alterá-lo comm assign e não mexer no original?
 
-Para resolver esse problema, podemos passar como primeiro parâmetro do Object.assign um objeto vazio {} e armazenar seu retorno em uma nova variável. Veja como fazer isso no exemplo abaixo.
+Para resolver esse problema, podemos passar como primeiro parâmetro do Object.assign um objeto vazio {} e armazenar seu retorno em uma nova variável. Veja como fazer isso no exemplo no vsc,
