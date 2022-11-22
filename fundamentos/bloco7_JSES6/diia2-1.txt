@@ -72,3 +72,96 @@ Em arquivos separados;
 A linha module.exports = sum exporta a função sum no primeiro arquivo para que possa ser utilizada em outros módulos. No segundo arquivo, utilizamos require('./sum') para importar a função sum. 
 
 (exemplo no vsc)
+
+Outro ponto positivo da utilização do Jest para fazer nossos testes é que ele traz uma mensagem contendo um diff, ou seja, o que era esperado de ocorrer no teste e o que de fato aconteceu. Isso nos ajuda a entender mais rapidamente onde está o erro.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+EXPECT E MATCHERS
+
+Ao escrever testes, você precisa verificar se o resultado que temos é o resultado que queremos. Para fazer isso, você precisa da função expect e dos matchers.
+
+O EXPECT recebe o valor a ser testado e retorna um objeto representando uma expectation (expectativa). A partir desse objeto retornado, você consegue utilizar os matchers para verificar se o objeto combina (MATCH) com o resultado esperado.
+
+
+Vamos passar pelos matchers mais comuns. 
+
+toBe
+		Esse matcher testa igualdade estrita (tipo e valor) entre o valor passado para expect e seu argumento. Por exemplo:
+
+														expect(5).toBe('5');  // fail
+														
+
+---------------------------
+
+toEqual
+		Para testar a igualdade de objetos e arrays, é preciso usar o matcher toEqual, que acessa cada elemento do objeto ou array, fazendo um trabalho de comparação específico e que retorna uma resposta mais voltada para a necessidade dos testes:
+		
+												test('Igualdade de array e object', () => {
+													  const arr = [1, 2 ,3];
+													  const obj = { a: 1, b: 2, c: 3};
+
+													  expect(arr).toBe([1, 2, 3]); // fails
+													  expect(obj).toBe({ a: 1, b: 2, c: 3}); // fails
+													  expect(arr).toEqual([1, 2, 3]); // OK
+													  expect(obj).toEqual({ a: 1, b: 2, c: 3}); // OK
+												});
+												
+---------------------------
+
+Para compreendermos a diferença entre toEqual e toBe, precisamos entender que no JavaScript existem duas formas de atribuir valores. A primeira é PARA A VARIÁVEL, e a segunda é PARA A PROPRIEDADE DE UM OBJETO. Essas formas de atribuição são conhecidas por VALOR e REFERÊNCIA.
+
+---------------------------------------
+
+Para nos aprofundarmos nessas duas formas, é importante entender os tipos de dados, que separamos em tipos primitivos (Ex. number, string, boolean, etc) e objetos (Ex. Objetos, Funções, Arrays, etc.).
+
+Nos tipos primitivos, a atribuição ocorre por valor, ou seja, uma cópia do valor original, pois eles são imutáveis. Eles são como gêmeos, e uma vez que o primeiro gêmeo corta seu cabelo, o segundo não terá seu cabelo alterado.
+
+													let gemeoUm = 'Cabelo comprido';
+													let gemeoDois = gemeoUm;
+
+													gemeoUm = 'Careca';
+
+													console.log(gemeoUm); // Careca
+													console.log(gemeoDois); // Cabelo comprido
+													
+
+Por outro lado, os objetos têm atribuição por referência, ou seja, a cada vez que você cria um novo objeto, cria-se um novo espaço na memória para ele. Eles são mutáveis, portanto podemos considerar que é uma forma de criar um apelido (alias) para o original, isto é, você pode ser chamado pelo seu nome ou por seu apelido, mas você é uma pessoa única, não é possível criar um clone seu.
+
+													let myName = { firstName: 'Pedro' };
+													let identity = myName;
+
+													myName.firstName = 'Carol';
+
+													console.log(myName.firstName); // Carol
+													console.log(identity.firstName); // Carol
+													
+													
+---------------------------------------------------------------------------------------------------------------------------
+
+O BLOCO DESCRIBE
+
+A função describe serve para agrupar vários testes, ajudando a melhorar a organização.
+
+Você pode utilizar describe, por exemplo, para separar testes de funções diferentes em um mesmo arquivo, ou para agrupar testes relacionados dentro de uma função complexa que requer muitos testes. Dentro de cada bloco, qualquer declaração de variáveis ou funções é local a esse bloco.
+
+												const multiply = (a, b) => a * b;
+												const subtract = (c, d) => c - d;
+
+												describe('testa função multiply', () => {
+												  test('retorna multiplicação com números positivos', () => {
+													expect(multiply(10, 4)).toBe(40);
+												  });
+												  test('retorna multiplicação com número negativo', () => {
+													expect(multiply(10, -4)).toBe(-40);
+												  });
+												})
+												
+												describe('testa função subtract', () => {
+												  test('retorna subtração de número menor', () => {
+													expect(subtract(12, 7)).toBe(5);
+												  });
+												  test('retorna subtração de número maior', () => {
+													expect(subtract(3, 4)).toBe(-1);
+												  });
+												})
