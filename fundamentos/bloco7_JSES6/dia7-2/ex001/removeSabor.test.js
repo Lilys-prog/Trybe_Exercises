@@ -20,6 +20,9 @@
     expect(['coca-cola', 'sukita', 'água', 'suco de laranja', 'groselha']).toEqual(removeBebida(bebidas, 'garapa'));
   });
   it('Remover groselha, caso exista', () => {
-    expect(removeBebida()).toEqual();
+    const bebidas = ['coca-cola', 'sukita', 'água', 'garapa', 'suco de laranja', 'groselha'];
+    expect(removeBebida(bebidas, 'groselha')).not.toContain('groselha');
   });
  });
+
+ // no teste da 'groselha' ainda se vai pegar o array original e colocar dentro. Vamos usar a função dentro do expect ao invés de colar o array sem o elemento. Por conta disso, vamos mudar o 'matcher' aqui. Vai usar-se o match 'toContain' com o valor lógico 'not' na frente.
