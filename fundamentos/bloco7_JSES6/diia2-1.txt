@@ -12,3 +12,63 @@ O Jest se destaca por alguns motivos:
 - Ele se integra muito bem com React. De fato, o Jest já vem instalado e configurado com o React. Não se preocupe se você não souber o que é o React, você aprenderá sobre ele em Front-end.
 
 (vídeo-aula expliicando como instalar e configurar o jest no pc)
+
+Sobre o pacote JSON:
+	Ele guarda algumas informações sobre o projeto em desenvolvimento, como:
+		- A versão do Node e do npm utiilizadas;
+		- A url do repositório;
+		- A verssão na qual o seu projeto se encontra;
+		- Dependênciias de produção e de desenvolvimento.
+É um pacotee de confiiiguração.
+Depois de criado, edita-se o JSON para que o siistema saba que vaiii se usar o JEST como banco de tesstes. 
+Abre-se o pacote JSON no vsc e altera-se a parte test, apagando o que tem lá e colocando "jest". Salvar. Desta forma está tudo preparado para instalar a BIBLOTECA  do jest no projeto (lembrar que esse procedimento deve ser feiito para cada projeto).
+
+Ass bibliiotecas são instaladas com o comando
+		npm install --save-dev jest
+		
+Um projeto pode ter uma dependência de desenvolvimento ou uma de produção. Ao usar '-dev' estamos dizendo que é uma dependência de desenvolvimento. Estará presente somente durante o desenvolvimento do projeto em si. O '--save' dá a dependênciia de produção, que será usada sempre que se utliizar o software.
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+ESCREVENDO TESTES COM JEST
+
+Para escrever testes utilizando o Jest é necessário usar a função test. A função test espera três argumentos:
+		- O primeiro argumento é o nome do teste: esse nome identifica o teste e é também o texto que aparecerá quando os testes forem executados;
+		- O segundo argumento é uma função contendo suas expectations: em outras palavras, é dentro dessa função que você fará os testes propriamente ditos;
+		- O terceiro argumento (OPCIONAL) é um timeout: indica quanto tempo o Jest deve esperar que o teste execute antes de abortá-lo.
+		
+A função it é um ALIAS para test, ou seja, ambas se referem à mesma função, e você pode usar qualquer uma delas. Essas funções, por serem globais, ficam automaticamente disponíveis nos seus arquivos uma vez que o Jest é instalado.
+
+EXEMPLO:
+														// implementação (função)
+														// sum.js
+														const sum = (a, b) => a + b;
+
+														//teste
+														test('sums two values', () => {
+														  expect(sum(2, 3)).toEqual(5);
+														});
+														// a palavra 'test' podia ser 'it'
+														
+Neste exemplo, tanto a implementação quanto os testes da função estão no mesmo arquivo. Na prática, porém, eles ficarão separados. Jest procura por arquivos com as extensões .js, .jsx, .ts e .tsx dentro de uma pasta com o nome __tests__, ou arquivos com o sufixo .test ou .spec. É comum que o arquivo de teste tenha o mesmo nome e fique na mesma pasta do arquivo que está sendo testado, acrescido da sufixo .test.js.
+
+		Função											// sum.js
+															const sum = (a, b) => a + b;
+
+															module.exports = sum;
+																														
+															--------------------------------------
+																															
+		Teste											// sum.test.js
+															const sum = require('./sum');
+
+															test('sums two values', () => {
+															  expect(sum(2, 3)).toBe(5);
+															});
+															
+															
+Em arquivos separados;
+
+A linha module.exports = sum exporta a função sum no primeiro arquivo para que possa ser utilizada em outros módulos. No segundo arquivo, utilizamos require('./sum') para importar a função sum. 
+
+(exemplo no vsc)
