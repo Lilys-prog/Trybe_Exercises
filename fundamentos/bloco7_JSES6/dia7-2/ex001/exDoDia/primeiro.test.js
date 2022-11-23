@@ -5,3 +5,8 @@
 
 // Verifique se a chamada myRemove([1, 2, 3, 4], 5) retorna o array esperado.
 
+const remove = require('./primeiro.js');
+
+describe('Testes da função myRemove', () => {
+
+});
