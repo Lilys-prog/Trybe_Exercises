@@ -1,0 +1,15 @@
+{
+  "name": "dia7-2",
+  "version": "1.0.0",
+  "main": "exemplo001.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
