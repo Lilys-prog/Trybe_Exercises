@@ -6,3 +6,5 @@ function myFizzBuzz(num) {
   return num;
 }
 
+module.exports = myFizzBuzz;
+

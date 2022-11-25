@@ -8,3 +8,9 @@
 // Execute a função myFizzBuzz(num), sendo num um número que não é divisível por 3 ou 5, e verifique se o retorno é o esperado.
 
 // Execute a função myFizzBuzz(num), sendo num um parâmetro que não é um número, e verifique se o retorno é o esperado.
+
+const fizzBuzz = requires('./segundo.js');
+
+describe('Testando a função fizzBuzz', () => {
+  it('')
+});
