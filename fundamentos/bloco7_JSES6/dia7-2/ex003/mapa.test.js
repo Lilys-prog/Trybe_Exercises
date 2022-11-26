@@ -8,13 +8,7 @@
 const func = require('./mapa');
 
 describe('Testando a função encode', () => {
-
+  it('Encode é função', () => {
+    expect(typeof encode).toBe('function');
+  });
 });
-
-describe('Testando a função decode', () => {
-
-});
-
-describe('Testando a função mapString', () => {
-
-})
