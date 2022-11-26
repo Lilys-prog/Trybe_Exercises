@@ -1,0 +1,22 @@
+MATCHERS E COBERTURA DE CÓDIGO - DIA 3/BLOCO 7
+
+Você será capaz de:
+	- Selecionar os matchers adequados para diferentes situações;
+	- Testar fluxos de exceção utilizando o Jest;
+	- Avaliar a cobertura de testes do seu código.
+
+Fluxos de exceção não deixam de ser códigos e também estão passíveis de erros. Para resolver esse problema, o Jest possui matchers para testar os fluxos de exceção. Dessa forma, você consegue manter seu código mais legível, de mais fácil manutenção e diminui a chance de acontecerem bugs.
+
+-------------------------------------------------------------------------------------------
+
+MATCHERS PARA TESTAR ARRAYS, OBJETOS E EXCEÇÕES
+
+Muitas vezes, nos nossos testes, vamos querer comparar se um determinado resultado é igual a um valor esperado. Para esses casos podemos utilizar os matchers ------toBe------, para tipos primitivos, ou ------toEqual------, para comparar arrays ou objetos. Porém, com o Jest é possível testar as mais diversas situações! A seguir serão apresentados alguns dos matchers mais utilizados, além de toBe e toEqual.
+
+---------------
+
+Arrays
+
+	Você pode verificar se um array contém um item em particular utilizando ------toContain------. Para verificar que um item possui uma estrutura mais complexa, utilize ------toContainEqual------. ------toHaveLength------ permite facilmente verificar o tamanho de um array ou de uma string.
+	
+	
