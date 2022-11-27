@@ -5,7 +5,7 @@
 // Verifique se a resposta contém o nome correto da personagem.
 
 // Exercício 4: Para finalizar o teste da função printMessage, você pode ainda criar um fluxo de exceção dentro da função para criar um erro caso seja enviado um parâmetro que não seja um objeto, ou que não tenha a propriedade personagem como no exemplo abaixo.
-
+// Agora que a função possui um fluxo de exceção, crie uma função de teste para validar se a mensagem de erro é lançada caso a função seja chamada com um objeto inválido.
 
 const {info, printMessage} = require('./printMessage.js');
 
@@ -19,4 +19,7 @@ describe('Testa a função printMessage', () => {
   it('Mensagem de boas vindas', () => {
     expect(printMessage(info)).toContain('Boas vindas, ')
   });
-});
+  it('Testando erro', () => {
+    expect(() => printMessage(undefined) || printMessage(null)).toThrow()
+  });
+});s
