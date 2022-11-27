@@ -12,4 +12,4 @@ const printMessage = (characterInfo) => {
 
 console.log(printMessage(info));
 
-module.exports = { info, printMessage };
+module.exports = {info, printMessage};
