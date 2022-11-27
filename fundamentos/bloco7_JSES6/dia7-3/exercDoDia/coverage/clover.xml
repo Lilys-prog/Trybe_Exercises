@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669583013728" clover="3.2.0">
-  <project timestamp="1669583013729" name="All files">
+<coverage generated="1669584381639" clover="3.2.0">
+  <project timestamp="1669584381639" name="All files">
     <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2" elements="15" coveredelements="15" complexity="0" loc="9" ncloc="9" packages="1" files="2" classes="2"/>
     <file name="printMessage.js" path="/home/lyli/trybe/trybe_exercises/fundamentos/bloco7_JSES6/dia7-3/exercDoDia/printMessage.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="3" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
       <line num="13" count="1" type="stmt"/>
       <line num="15" count="1" type="stmt"/>
     </file>
