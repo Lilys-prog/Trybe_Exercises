@@ -18,5 +18,54 @@ Muitas vezes, nos nossos testes, vamos querer comparar se um determinado resulta
 Arrays
 
 	Você pode verificar se um array contém um item em particular utilizando ------toContain------. Para verificar que um item possui uma estrutura mais complexa, utilize ------toContainEqual------. ------toHaveLength------ permite facilmente verificar o tamanho de um array ou de uma string.
+
+---------------
+
+Objetos
+
+	É bastante comum testar se um objeto possui uma propriedade específica. O matcher ------toHaveProperty------ é ideal para esses casos. Por exemplo, podemos avaliar se, ao criar um objeto com e-mail e senha, o objeto realmente tenha essas propriedades. Mais ainda: podemos testar se o valor da propriedade de e-mail tem o valor adequado.
+
+---------------
+
+Exceções
+
+	Para testes de fluxos de exceções e de lançamentos de erros com o throw, podemos utilizar o matcher ------toThrow------. Este matcher será usado para testar se uma função é capaz de lançar um erro quando executada. Por exemplo, se quisermos testar uma função verificaNumeros('string') passando uma string como parâmetro. O matcher toThrow irá testar o erro retornado pela função para verificar se a mensagem de erro está correta, por exemplo.
 	
+--------------
+
+not
+
+	not permite testar o oposto de algo. Joga-se na frente do matcher para testar seu oposto.
 	
+--------------
+
+Depois de começar a fazer os testes, pode-se usar o comando ------ npm test-- --coverage ------ para saber o quanto os testes estão cobrindo. Vai criar uma pasta e essa pasta vai ter um arquivo html q pode ser visto no ------goLive.
+
+Esse comando faz um levantamento de quanto do código está sendo coberto pelos testes escritos.
+As colunas da tabela trazem as seguintes informações:
+
+			Files: Lista os arquivos testados pelo jest.
+
+			% Stmts: Exibe a porcentagem de declarações (statements) cobertas pelos testes.
+
+			% Branch: Exibe a porcentagem coberta dos diferentes caminhos por onde o código pode seguir. Por exemplo, no caso de estruturas condicionais, como if, calcula se há teste para o caso verdadeiro e para o caso falso da condição.
+
+			% Funcs: Exibe a porcentagem das funções cobertas pelos testes.
+
+			% Lines: Exibe a porcentagem de linhas cobertas pelos testes.
+
+			Uncovered Line #s: Exibe os números das linhas ainda não cobertas pelos testes.
+
+A partir da informação de quais linhas não estão cobertas pelos testes, é possível escrever os testes que faltam para cobrir todo o código.
+
+Caso queira uma visualização mais amigável, após executar o comando para calcular a cobertura de testes, uma pasta “coverage” é criada com as informações de cobertura de testes. Dentro dessa pasta, há uma pasta ------“lcov_report”------, que contém um arquivo index.html com uma visualização dos dados da tabela e ainda exibe o código testado, marcando as linhas ainda não cobertas pelos testes.
+
+Importante: Uma cobertura de testes sobre 100% do código-fonte não quer dizer, necessariamente, que os seus testes são suficientes para atestar o correto funcionamento do código. Significa, apenas, que existem testes escritos para todas as linhas. Para fazer testes de forma completa, você precisa assegurar que seus testes cobrem as diferentes situações que podem ocorrer com seu código.
+
+
+------------------------------------
+Obs1 de exemplo:
+Teste se a função createItem lança algum erro quando não recebe parâmetros.
+
+Implemente o teste para a chamada da função createItem sem argumentos e verifique se é lançada alguma exceção. Qual o matcher mais adequado? Lembre-se de ------envolver a chamada da função em uma nova função (() => função)------, para que o Jest possa capturar o erro, conforme orienta a documentação (https://jestjs.io/pt-BR/docs/using-matchers#exce%C3%A7%C3%B5es). 
+------------------------------------
