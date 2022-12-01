@@ -1,0 +1,191 @@
+BLOCO 8 - BLOCO FINAL DE FUNDAMENTOS
+HIGHER ORDER FUNCTIONS DO JS ES6
+DIA 01: INTRODUÇÃO ÀS HOF's
+
+------------------------------------------------------------------------------------------------
+
+O que vamos aprender?
+Você vai aprender os conceitos e as aplicações das chamadas Higher Order Functions, ou HOFs, que SÃO FUNÇÕES QUE RECEBEM OUTRA FUNÇÃO COMO ARGUMENTO OU QUE RETORNAM UMA FUNÇÃO.
+
+A função addEventListener pode ser considerada uma HOF, porque pode receber e retornar uma função.
+
+------------------------------------------------------------------------------------------------
+
+Existem diversos tipos de HOFs, e você também pode criar suas próprias HOFs. Hoje você vai aprender como utilizar algumas dessas funções nativas para a manipulação de arrays, como:
+
+ - >>> forEach <<<, que executa uma ação para cada item do array;
+ - >>> find <<<, que encontra o primeiro elemento que satisfaça alguma condição;
+ - >>> some <<<, que retorna true se algum elemento satisfizer alguma condição, caso contrário retorna false;
+ - >>> every <<<, que retorna true se todos os elementos corresponderem a uma condição, caso contrário retorna false.
+ 
+ ------------------------------------------------------------------------------------------------
+ 
+ Você será capaz de:
+		- Utilizar funções de diferentes formas;
+		- Reutilizar lógicas de códigos;
+		- Aplicar o conceito de Higher Order Functions;
+		- Utilizar a função >>> Array.forEach <<< para iterar sobre todos os elementos de um array;
+		- Utilizar a função >>> Array.find <<< para encontrar o primeiro elemento de um array que satisfaça a uma condição;
+		- Utilizar as funções >>> Array.some <<< e >>> Array.every <<< para testar se os elementos de um array satisfazem a uma condição;
+
+ ------------------------------------------------------------------------------------------------
+ 
+ HIGHER ORDER FUNCTIONS
+ 
+ As Higher Order Functions, ou HOFs, são funções que usam outras funções em suas operações, ou seja, as HOFs aceitam outras funções como parâmetro e/ou retornam outra função.
+ 
+																	 const button = document.querySelector('#signup-button');
+
+																	button.addEventListener('click', () => {
+																	  console.log('Registrado com sucesso!');
+																	});
+																	
+Perceba que a função addEventListerner é uma HOF, porque ela recebe outra função como parâmetro.
+Para deixar o código mais organizado, você pode separar a função executada ao clicar no botão e salvá-la em uma variável. Observe o exemplo abaixo:
+
+																		const button = document.querySelector('#signup-button');
+
+																		const registerUser = () => {
+																		  console.log('Registrado com sucesso!');
+																		};
+
+																		button.addEventListener('click', registerUser);
+																		
+Veja que agora a função addEventListerner recebe a função registerUser como parâmetro, deixando o código mais organizado.
+
+ ------------------------------------------------------------------------------------------------
+ 
+ ESTRUTURA DAS HOFS EM ARRAYS
+ 
+ Ao manipular arrays, temos HOFs nativas do JavaScript que iteram pelo array e executam uma determinada ação para cada elemento do array, como:
+ 
+		- <<< forEach >>>: executa uma ação determinada por você para cada item do array e não possui retorno;
+		- <<< find >>>: encontra o primeiro elemento que satisfaça alguma condição;
+		- <<< some >>>: retorna true se algum elemento satisfaz alguma condição, caso contrário retorna false;
+		- <<< every >>>: retorna true se todos os elementos corresponderem a uma condição, caso contrário retorna false.
+		
+As Higher Order Functions são parecidas entre si: elas possuem objetivos diferentes no seu código, mas todas possuem a mesma estrutura.
+
+A primeira parte de uma HOF é o array a ser iterado e a HOF a ser executada. Por exemplo:
+
+																			array.hofASerExecutada();	
+																			
+A HOF recebe como parâmetro uma função callback: uma função callback é uma função passada por parâmetro ou executada dentro de outra função. No caso abaixo a função é anônima, uma função sem nome.
+
+																			array.hofASerExecutada(() => {});
+																			
+A função anônima que foi passada por parâmetro pode receber até três parâmetros:
+
+		- o primeiro parâmetro é o elemento a ser iterado e é o único obrigatório;
+
+		- o segundo parâmetro é o index do elemento atual;
+
+		- o terceiro parâmetro é o array original e não é muito comum utilizá-lo.
+		
+												array.hofASerExecutada((elementoAtual, index, arrayOriginal) => {});
+												
+O código a ser executado vai depender da funcionalidade da HOF.
+
+
+Por exemplo, o forEach executa uma determinada ação para cada item do array e não retorna nada.
+
+														array.forEach((element, index) => {
+														  // código a ser executado
+														});
+														
+O código abaixo possui um array com diversos valores. Observe e execute o código:
+
+														const arrayOfValues = ['josé', 50, 0.25, { comida: 'Chocolate' }];
+
+														arrayOfValues.forEach((element, index) => {
+														  console.log(`O elemento atual é: ${element} e possui o index: ${index}`);
+														});					
+
+
+O código acima está organizado da seguinte maneira:
+
+	- arrayOfValues: nome do array que será percorrido;
+	- .forEach: a HOF usada. Poderia ser outra HOF, como .find, .some, .every, entre outras, que a estrutura seria a mesma;
+	- element: valor do elemento do array;
+	- (element, index) => { /* código */ }: função a ser executada.														
+
+------------------------------------------------------------------------------------------------------------
+
+Array.forEach
+
+O forEach é uma HOF que percorre o array e executa uma função para cada um dos seus valores e não retorna nada. Existem outras HOFs que iteram pelos arrays e retornam valores, como outros arrays ou booleanos. O forEach é responsável por executar uma ação em cada elemento do array, mas não possui retorno.
+
+EXEMPLO:
+
+Para transformar um array, de pessoas aprovadas em um concurso, para letras maiúsculas, você pode fazer o seguinte:
+
+--- Crie a estrutura do forEach:
+
+
+										const pessoasAprovadas = ['Ana Beatriz', 'Caio Nunes', 'Afonso Ribeiro', 'Leonardo Lins']; // lista de nomes
+
+										pessoasAprovadas.forEach(() => {});
+										
+										
+--- Passe os parâmetros nome e index na callback:
+
+
+										const pessoasAprovadas = ['Ana Beatriz', 'Caio Nunes', 'Afonso Ribeiro', 'Leonardo Lins']; // lista de nomes
+
+										pessoasAprovadas.forEach((nome, index) => {});
+										
+										
+--- Crie a lógica dentro do forEach utilizando a fução toUpperCase().
+
+Você pode acessar cada item do array pessoasAprovadas e transformar cada nome em maiúsculo.
+
+
+										const pessoasAprovadas = ['Ana Beatriz', 'Caio Nunes', 'Afonso Ribeiro', 'Leonardo Lins']; // lista de nomes
+
+										pessoasAprovadas.forEach((nome, index) => {
+										  pessoasAprovadas[index] = pessoasAprovadas[index].toUpperCase(); // acessa cada elemento do array e atualiza para letra maiúscula
+										});
+
+										console.log(pessoasAprovadas); // ['ANA BEATRIZ', 'CAIO NUNES', 'AFONSO RIBEIRO', 'LEONARDO LINS']
+										
+										
+<<<<<<<<<< OBSERVAÇÃO >>>>>>>>>> : perceba que o tipo de dado do array pessoasAprovadas continua sendo um array. Por isso, podemos utilizar a const, já que não estamos reatribuindo valores. Seria o mesmo que acessar cada item do array e transformá-lo em letra maiúscula. Por exemplo, pessoasAprovadas[0].toUpperCase();.
+
+---------------------
+
+EXEMPLO 2
+
+Agora imagine que você tenha desenvolvido um programa para fazer a tabuada do 2. Como você acha que esse código seria ao utilizar o forEach?
+
+Você pode construir a sua lógica da seguinte maneira:
+
+
+															const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+															numbers.forEach((element) => {
+															  console.log(element * 2); // [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+															});
+															
+No exemplo acima, para cada item do array number, o forEach executa um console.log com a multiplicação do elemento atual do array por 2.
+
+Uma forma mais simples de escrever seria:
+
+															const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+															numbers.forEach((element) => console.log(element * 2));
+															
+												
+A callback tb pode ser separada:
+
+
+															const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+															const multiply = (element) => {
+															  console.log(element * 2);
+															}
+
+															numbers.forEach(multiply);
+															
+															
+(vídeo)
+Vou fazer o exemplo do vídeo no vsc.
