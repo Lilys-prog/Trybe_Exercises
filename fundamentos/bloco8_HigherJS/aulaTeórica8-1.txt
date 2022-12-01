@@ -189,3 +189,56 @@ A callback tb pode ser separada:
 															
 (vídeo)
 Vou fazer o exemplo do vídeo no vsc.
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+Array.find
+
+A função find é utilizada para achar o primeiro elemento que satisfaça a condição passada e retorne o primeiro valor do array que corresponda a essa condição. Caso ele não encontre, retorna undefined.
+
+EXEMPLO
+Por exemplo, imagine que o time de pessoas desenvolvedoras com quem você trabalha resolveu fazer um desafio. Para isso, salvaram todas as idades das pessoas em um array, e você precisa descobrir se existem pessoas com menos de 20 e com mais de 50 anos.
+
+
+																const idades = [18, 21, 42, 20, 19, 21, 30, 73, 82, 45, 48, 50];
+
+																idades.find((idade) => idade < 20);    // 18
+
+
+No exemplo acima, o retorno foi 18. Isso acontece porque a primeira iteração do find acessa o primeiro item do array, que é o 18. Ao verificar se 18 é menor que 20, a resposta é true, e então o find retorna o número 18 e encerra a execução do código, não importa se existe outras. A pergunta é "existe?".
+
+Agora você precisa verificar se existem pessoas com mais de 50 anos. 
+
+
+																	const idades = [18, 21, 42, 20, 19, 21, 30, 73, 82, 45, 48, 50];
+
+																	idades.find((idade) => idade > 50);     // 73
+																	
+																	
+Caso você realize uma verificação com o find que não encontre nenhum elemento, o retorno será undefined.
+
+
+																const idades = [18, 21, 42, 20, 19, 21, 30, 73, 82, 45, 48, 50];
+
+																idades.find((idade) => idade === 33);     // undefined
+																
+																						-----------------------
+																						
+																			// verifica se tem número par:
+																
+																const numbers = [19, 21, 30, 3, 45, 22, 15];
+
+																const verifyNumbers = numbers.find((number) => number % 2 === 0);
+
+																console.log(isEven2);        // 30
+																
+																
+O find executa a callback uma vez para cada item até achar o elemento (que cumpre o requisito) e então pára de executar. Se não achar nenhum ele retorna 'undefined'.
+
+Exercícios de fixação no vsc.
+																
+									
