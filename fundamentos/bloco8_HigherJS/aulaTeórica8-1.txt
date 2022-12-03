@@ -240,5 +240,104 @@ Caso você realize uma verificação com o find que não encontre nenhum element
 O find executa a callback uma vez para cada item até achar o elemento (que cumpre o requisito) e então pára de executar. Se não achar nenhum ele retorna 'undefined'.
 
 Exercícios de fixação no vsc.
-																
-									
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+Array.some e Array.every
+
+As funções some e every são parecidas e retornam valores booleanos.
+
+A função some retorna true se ao menos um elemento de um array satisfaz a uma condição. Já o every retorna true se todos os elementos de um array satisfazem a uma condição.
+
+
+------------------------
+
+Array.some
+
+Imagine que você esteja responsável por criar um sistema de acesso para as pessoas colaboradas da empresa em que você trabalha. Para isso, precisa verificar se pelo menos uma dessas pessoas possui o cargo de gerência. As informações das pessoas estão dentro de um array de objetos:
+
+																		const pessoas = [
+																		  { nome: 'Ana', cargo: 'Analista' },
+																		  { nome: 'João', cargo: 'Gerência' },
+																		  { nome: 'Aline', cargo: 'Analista' },
+																		  { nome: 'Joana', cargo: 'Gerência' },
+																		];
+
+
+Como você precisa descobrir se alguma das pessoas possui o cargo de gerência e não precisa de mais detalhes sobre essa pessoa, você pode utilizar o some, que vai retornar true caso encontre alguém com esse cargo, senão vai retornar false.
+
+
+																		const pessoas = [
+																		  { nome: 'Ana', cargo: 'Analista' },
+																		  { nome: 'João', cargo: 'Gerência' },
+																		  { nome: 'Aline', cargo: 'Analista' },
+																		  { nome: 'Joana', cargo: 'Gerência' },
+																		];
+
+																		const verificaCargo = pessoas.some((pessoa) => pessoa.cargo === 'Gerência');
+
+																		console.log(verificaCargo);         // true
+
+
+No código acima, é verificado se dentro do array de pessoas existe alguém que possua o cargo de 'Gerência'. O retorno foi true porque existe pelo menos uma pessoa com esse cargo.
+
+------------------
+
+Exemplo 2:
+
+Agora, utilizando a mesma lógica, verifique se existe uma pessoa com o cargo de 'Product Owner', abaixo:
+
+
+																		const pessoas = [
+																		  { nome: 'Ana', cargo: 'Analista' },
+																		  { nome: 'João', cargo: 'Gerência' },
+																		  { nome: 'Aline', cargo: 'Analista' },
+																		  { nome: 'Joana', cargo: 'Gerência' },
+																		];
+
+																		const verificaCargo = pessoas.some((pessoa) => pessoa.cargo === 'Product Owner');
+
+																		console.log(verificaCargo);         // false
+
+
+No código acima, o retorno foi false, pois não existe ninguém nesse array com o cargo de 'Product Owner'.
+
+Portanto, tenha em mente que o <<< some >>> só retorna true caso encontre algum elemento que satisfaça à condição. Caso contrário, retorna false.
+
+------------------
+
+Exemplo 3:
+
+Agora imagine que você precise verificar se existe algum nome que comece com a letra desejada. Analise e execute o código abaixo:
+
+
+												const listNames = ['Maria', 'Manuela', 'Jorge', 'Ricardo', 'Wilson'];
+
+												const verifyFirstLetter = (letter, names) => names.some((name) => name[0] === letter);
+
+												console.log(verifyFirstLetter('J', listNames)); // true
+												console.log(verifyFirstLetter('X', listNames)); // false
+
+
+O código acima mostra a função verifyFirstLetter, que recebe como primeiro parâmetro letter, que é a letra desejada, e como segundo parâmetro o array chamado listNames.
+
+Dentro da função verifyFirstLetter, é executado o some para verificar se a primeira letra do nome atual (name[0]) da iteração é igual à letra desejada (letter).
+
+Ao verificar se existe um nome que começa com a letra J, o retorno é true. Isso significa que existe um nome que começa com a letra J. Já ao verificar se existe um nome que inicia com X, o retorno é false, pois não existe nenhum nome que inicie com X.
+
+
+
+------------------------
+
+Array.every
+
+
+
+
+
+
+
+
+
