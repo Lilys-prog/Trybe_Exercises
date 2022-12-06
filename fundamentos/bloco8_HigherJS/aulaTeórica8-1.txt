@@ -135,7 +135,7 @@ Para transformar um array, de pessoas aprovadas em um concurso, para letras mai�
 										pessoasAprovadas.forEach((nome, index) => {});
 										
 										
---- Crie a lógica dentro do forEach utilizando a fução toUpperCase().
+--- Crie a lógica dentro do forEach utilizando a função toUpperCase().
 
 Você pode acessar cada item do array pessoasAprovadas e transformar cada nome em maiúsculo.
 
@@ -150,6 +150,7 @@ Você pode acessar cada item do array pessoasAprovadas e transformar cada nome e
 										
 										
 <<<<<<<<<< OBSERVAÇÃO >>>>>>>>>> : perceba que o tipo de dado do array pessoasAprovadas continua sendo um array. Por isso, podemos utilizar a const, já que não estamos reatribuindo valores. Seria o mesmo que acessar cada item do array e transformá-lo em letra maiúscula. Por exemplo, pessoasAprovadas[0].toUpperCase();.
+Neste exemplo, em particular, não se está pedindo para exibir o índice, mas poderia.
 
 ---------------------
 
@@ -209,7 +210,7 @@ Por exemplo, imagine que o time de pessoas desenvolvedoras com quem você trabal
 																idades.find((idade) => idade < 20);    // 18
 
 
-No exemplo acima, o retorno foi 18. Isso acontece porque a primeira iteração do find acessa o primeiro item do array, que é o 18. Ao verificar se 18 é menor que 20, a resposta é true, e então o find retorna o número 18 e encerra a execução do código, não importa se existe outras. A pergunta é "existe?".
+No exemplo acima, o retorno foi 18. Isso acontece porque a primeira iteração do find acessa o primeiro item do array, que é o 18. Ao verificar se 18 é menor que 20, a resposta é true, e então o find retorna o número 18 e encerra a execução do código, não importa se existe outras. A pergunta que ele faz é "existe?". Quando ele descobre que é sim, retorna o valor "como prova" e termina a execução. Se não achar nada depois de percorrer todo o array, retorna undefined.
 
 Agora você precisa verificar se existem pessoas com mais de 50 anos. 
 
@@ -327,14 +328,38 @@ Dentro da função verifyFirstLetter, é executado o some para verificar se a pr
 
 Ao verificar se existe um nome que começa com a letra J, o retorno é true. Isso significa que existe um nome que começa com a letra J. Já ao verificar se existe um nome que inicia com X, o retorno é false, pois não existe nenhum nome que inicie com X.
 
-
+O 'some' pergunta se existe e responde true ou false. Para saber qual é o elemento, a função teria que ser mais elaborada e usar mais ferramentas.
 
 ------------------------
 
 Array.every
 
+Imagine que você pegou um boletim escolar antigo e quer verificar se passou em todas as matérias.
+Ao utilizar a função every, você consegue resolver esse problema. Caso tenha passado em todas as matérias, o retorno será true; caso contrário, será false. Analise e execute o código abaixo:
+
+										const grades = {
+											portugues: 'Aprovado',
+											matematica: 'Reprovado',
+											ingles: 'Aprovado',
+										};
+
+										const verifyGrades = Object.values(grades).every((grade) => grade === 'Aprovado'); // false
+
+										console.log(verifyGrades);
 
 
+>>>>> Vamos analisar a função acima?
+
+ - A variável verifyGrades é responsável por salvar a lógica;
+
+ - Ao utilizar o Object.values, o retorno será um array com os valores das chaves do objeto grades como ['Aprovado', 'Reprovado', 'Aprovado'];
+
+ - Então o every executa a callback para cada um dos itens do array e verifica se todos eles possuem o texto 'Aprovado';
+
+ - O retorno é false, pois nem todos os valores das chaves do objeto grades são iguais a 'Aprovado'. <<<<<
+
+
+fazer exercícios no vsc. 
 
 
 
