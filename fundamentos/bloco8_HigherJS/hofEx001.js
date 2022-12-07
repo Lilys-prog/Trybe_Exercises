@@ -11,15 +11,45 @@
     // Nome: Luiza Drumond -> Chame sua função passando o nome Luiza Drumond como parâmetro, substituindo as aspas
     // Nome: Carla Paiva -> Chame sua função passando o nome Carla Paiva como parâmetro, substituindo as aspas
 
-const newEmployees = (nomeC) => {
+const employeeGenerator = (fullname) => {
+  const email = fullname.toLowerCase().replace(' ', '_');
+  return { fullname, email: `${email}@trybe.com` };
+};
+
+const newEmployees = (callback) => {
   const employees = {
-    nomeC: 'Pedro Guerra', 
-    nomeC: 'Luiza Drumond', 
-    nomeC: 'Carla Paiva', 
+    id1: callback('Pedro Guerra'), 
+    // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro
+    id2: callback('Luiza Drumond'), 
+    // Nome: Luiza Drumond -> Chame sua função passando o nome Luiza Drumond como parâmetros 
+    id3: callback('Carla Paiva')
+    // Nome: Carla Paiva -> Chame sua função passando o nome Carla Paiva como parâmetro
   }
-  newEmployees.forEach((element) => {
-    element.email = `${employees.nomeC}.split(_)@trybe.com`;
-  });
   return employees;
 };
-console.log(newEmployees('Pedro Guerra'));
+
+console.log(newEmployees(employeeGenerator));
+
+//  ==================================================================
+
+//SOLUÇÃO PASSO A PASSO PARA COMPARAR COM A RESPOSTA
+
+// 1º passo: crie a função que recebe o nome e gera o email da pessoa contratada.
+    // Ao criar a função, você deve passar o nome completo por parâmetro e retornar um objeto que vai receber o nome completo e o email.
+
+
+// 2º passo: desenvolva a lógica do email.
+    // O email vai ser gerado a partir do nome passado por parâmetro.
+    // Ao criar um email, é importante deixá-lo padronizado com letras minúsculas e utilizar o underline(_) para separar o nome da pessoa. Para isso:
+    // utilize a função toLowerCase() para deixar as letras minúsculas.
+    // separe o nome utilizando o underline (_): >>>>>>>> (replace(' ', '_'))
+    // OPÇÃO: O nome vem separado por espaços; você pode utilizar o replace para substituir os espaços por _.
+    //  🔎: O replace não é a única maneira de substituir valores em uma string. Você pode utilizar outros métodos, como o split e o join, etc.
+    //retorne o email utilizando template literals.
+
+
+// Terceiro passo: passe a função como parâmetro para cada id dentro de newEmployees.
+    // Para finalizar a sua lógica, basta passar a função que você criou como parâmetro de newEmployees.
+
+
+
