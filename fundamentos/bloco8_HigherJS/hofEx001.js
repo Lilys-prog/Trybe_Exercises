@@ -42,9 +42,9 @@ console.log(newEmployees(employeeGenerator));
     // O email vai ser gerado a partir do nome passado por parâmetro.
     // Ao criar um email, é importante deixá-lo padronizado com letras minúsculas e utilizar o underline(_) para separar o nome da pessoa. Para isso:
     // utilize a função toLowerCase() para deixar as letras minúsculas.
-    // separe o nome utilizando o underline (_): >>>>>>>> (replace(' ', '_'))
+    // separe o nome utilizando o underline (_): >>>>>>>> (replace(' ', '_')) <<<<<<<<<
     // OPÇÃO: O nome vem separado por espaços; você pode utilizar o replace para substituir os espaços por _.
-    //  🔎: O replace não é a única maneira de substituir valores em uma string. Você pode utilizar outros métodos, como o split e o join, etc.
+    //  🔎: O replace não é a única maneira de substituir valores em uma string. Você pode utilizar outros métodos, como o split e o join, etc. >>>>>>>> .split(' ').join('_')  <<<<<<<<<<   numa linha só, depois do lower case
     //retorne o email utilizando template literals.
 
 
