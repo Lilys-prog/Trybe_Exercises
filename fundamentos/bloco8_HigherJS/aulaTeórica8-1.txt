@@ -361,7 +361,7 @@ Ao utilizar a função every, você consegue resolver esse problema. Caso tenha 
 
 fazer exercícios no vsc. 
 
-
+Mais exercícios no vsc (seção 'Exercícios - agora, a prática')
 
 
 

@@ -8,9 +8,9 @@
 
 const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
-const hasName = (arr, name) => {
-  
-};
+// verifica se o nomeAtual o qual o 'some()' está analisando é igual ao nome passado por parâmetro. Vai fazer isso no array até encontrar. true ou false.
 
+const hasName = (arr, name) => arr.some((nomeAtual) => nomeAtual === name);
+       
 console.log(hasName(names, 'Ana'));
 console.log(hasName(names, 'Pedro'));
