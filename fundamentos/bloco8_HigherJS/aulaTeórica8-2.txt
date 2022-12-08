@@ -4,6 +4,86 @@ O que vamos aprender?
 Hoje você vai conhecer as HOFs Array.sort e Array.map. Essas funções são bastante poderosas, podendo facilitar muito a manipulação e criação de arrays, resultando em um código mais legível, conciso e expressivo.
 
 Você será capaz de:
-    Utilizar a função Array.sort para ordenar arrays de acordo com algum critério;
+   - Utilizar a função Array.sort para ordenar arrays de acordo com algum critério;
 
-    Utilizar a função Array.map para manipular e construir arrays.
+   - Utilizar a função Array.map para manipular e construir arrays.
+
+
+// =================================================================================
+// =================================================================================
+
+
+Relembrando o que são Higher Order Functions
+
+As Higher Order Functions são funções que recebem outra função como parâmetro, ou que retornam uma função.
+
+Hoje você vai aprender mais duas HOFs: o map, que itera pelo array e permite criar um novo array com modificações em cada um dos elementos do array original, e o sort, que ordena arrays de acordo com algum critério.
+
+
+// =================================================================================
+// =================================================================================
+
+
+Array.sort
+
+EXEMPLO PRÁTICO
+A empresa em que você trabalha recebeu um projeto de uma rede de mercados e você ficou responsável por criar o >>>>>>>>>> sistema de saída de produtos <<<<<<<<<<<. A gerência do mercado pediu que os produtos fossem organizados por ordem alfabética.
+
+A lista de produtos que precisam ser ordenados está salva no array food:
+
+                    const food = ['arroz', 'feijão', 'farofa', 'chocolate', 'doce de leite'];
+
+Após pesquisar algumas soluções, você encontrou a função sort, que permite ordenar um array, e criou o código abaixo:
+
+                    const food = ['arroz', 'feijão', 'farofa', 'chocolate', 'doce de leite'];
+                    food.sort();
+                    console.log(food);
+
+                    // [ 'arroz', 'chocolate', 'doce de leite', 'farofa', 'feijão' ]
+
+Funcionou bem com um array de strings, não é mesmo? Portanto, caso queira ordenar de forma alfabética, basta chamar sort, sem parâmetros algum na função.
+
+// -------------
+
+EXEMPLO COM NÚMEROS
+
+                    const inventory = [1, 3, 2, 5, 4, 6, 7, 8, 9, 10];
+                    inventory.sort();
+                    console.log(inventory); 
+                    
+                    // [1, 10, 2, 3, 4, 5, 6, 7, 8, 9]
+
+O que aconteceu com esta ordenação?
+
+Ao trabalhar com strings e utilizar o sort sem nenhum parâmetro, ele entende que é para ordenar por ordem alfabética. Nesse caso, quando há elementos como números, o sort converte para string e realiza a comparação de acordo com a tabela de caracteres unicode (universal character encoding standard) e, nela, o computador entende que o número 10, número 1 seguido do número 0, vem antes do número 2.
+
+Para resolver o problema da ordenação, o .sort() pode receber como parâmetro uma função de comparação.
+
+                    const inventory = [1, 3, 2, 5, 4, 6, 7, 8, 9, 10];
+                    inventory.sort((a, b) => a - b);
+                    console.log(inventory); 
+
+                    // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+A lógica é a seguinte: a função sort recebe todos os elementos do array e realiza a comparação de cada um deles em pares (elemento1, elemento2). Se a operação elemento1 - elemento2 der resultado negativo, o elemento1 vai para trás. Caso contrário, vai para frente.
+
+Se você precisar utilizar a forma decrescente, basta inverter a operação elemento1 - elemento2 por elemento2 - elemento1:
+
+                    const inventory = [1, 3, 2, 5, 4, 6, 7, 8, 9, 10];
+                    // troca a operação para b - a
+                    inventory.sort((a, b) => b - a);
+                    console.log(inventory); 
+                    
+                    // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+(vídeo do Noel explicando tudo o que há por trás dessa conta)
+
+// -------------
+
+EXEMPLO COM OBJETOS (utilizando o sort() com um array de objetos)
+(vídeo com o NOEL)
+exemplodia2.js
+
+Depois disso, alguns exercícios no vsc.
+
+
