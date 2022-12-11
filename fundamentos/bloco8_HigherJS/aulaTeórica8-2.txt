@@ -87,3 +87,121 @@ exemplodia2.js
 Depois disso, alguns exercícios no vsc.
 
 
+// =================================================================================
+// =================================================================================
+
+Array.map
+
+A função map possui a mesma estrutura que o forEach, o que muda é o seu retorno.
+(vídeo - Entendendo o .map()) => pelo Noel
+
+Percorre todos os elementos de um array e retorna um array novo >>>>>>>>>> com o mesmo número de elementos do array original <<<<<<<<<< com as modificações que forem feitas aos elementos.
+
+EXEMPLO PRÁTICO (no vsc)
+
+O map pode receber até 3 parâmetros, mas só o priimmeiro é obrigatório, que é cada elemento do array que se vai usar, na formma de elemento, para que a hof passe por cada um.
+O outro parâmetro pode ser o índice e o último pode ser o próprio array original inteiro, sem ser por elemento.
+(da mesma forma que no forEach)
+
+
+// =================================================================================
+// =================================================================================
+Obs: o objetivo a partir daqui é usar cada vez menos o 'for', inclusive o forEach, através das novas ferramentas
+// =================================================================================
+// =================================================================================
+
+
+O map permite realizar cálculos, tarefas e alterar elementos sem que se precise alterar o array original. No caso abaixo, cria-se um novo array de números negativos, sem que o array de partida mude:
+
+                        const numbers = [1, 2, 3, 4, -5];
+
+                        const negativeNumbers = numbers.map((number) => ((number > 0) ? number * (-1) : number));
+
+                        console.log(negativeNumbers); // [ -1, -2, -3, -4, -5 ]
+                        console.log(numbers); // [ 1, 2, 3, 4, -5 ]
+
+
+Utilizando o 'for' haveriam mais linhas de código:
+
+
+                        const numbers = [1, 2, 3, 4, -5];
+
+                        const negativeNumbers = [];
+                        for (let index = 0; index < numbers.length; index += 1) {
+                        if (numbers[index] > 0) {
+                           negativeNumbers.push(numbers[index] * -1);
+                        } else {
+                           negativeNumbers.push(numbers[index]);
+                        }
+                        }
+
+                        console.log(negativeNumbers); // [ -1, -2, -3, -4, -5 ]
+                        console.log(numbers); // [ 1, 2, 3, 4, -5 ]
+
+
+O map, assim como o forEach, otimiza o código, tornado-o mais limpo e legível, além de ocupar menos espaço e usar uma lógica mais direta.
+
+=================================================================
+
+Outra forma de usar o .map() é unir dois arrays para criar um novo.
+
+Considere que você possui duas listas: o preço do primeiro produto (Arroz) é o primeiro elemento da lista prices (2.99), e assim por diante:
+
+                        const products = ['Arroz', 'Feijão', 'Alface', 'Tomate'];
+                        const prices = [2.99, 3.99, 1.5, 2];
+
+Deseja-se juntá-las em apenas uma lista de objetos que fique da seguinte forma:
+
+const listProducts = [{ Arroz: 2.99 },...]    // array de objetos
+(FIZ NO JS TB, PRA VER FUNCIONANDO)
+
+
+                        const products = ['Arroz', 'Feijão', 'Alface', 'Tomate'];
+                        const prices = [2.99, 3.99, 1.5, 2];
+
+                        const updateProducts = (listProducts, listPrices) => listProducts.map((product, index) => (
+                        { [product]: listPrices[index] }
+                        ));
+
+                        const listProducts = updateProducts(products, prices);
+                        console.log(listProducts);
+
+
+
+E, antes de seguir em diante, talvez você tenha se perguntado: Qual a diferença, afinal, de map para o forEach?
+
+As principais diferenças são:
+
+O map aplica sobre os elementos de um array uma função e retorna um array novo, sem modificar o original;
+
+O forEach não tem retorno, ele é genérico e pode fazer diversas coisas, como executar uma função para cada elemento do array, modificar o array, atribuir valores a variáveis ou objetos, etc.
+
+                     ====================================================
+                     EXEMPLO PARA MOSTRAR A DIFERENÇA ENTRE forEach E map
+
+                     const numeros = [1, 2, 3, 4, 5, 6];
+                     console.log(numeros.map((numero) => numero * 2)); // Retorno: [2, 4, 6, 8, 10, 12]
+-------------------------
+                     const paresMenoresQueCinco = [];
+                     numeros.forEach((numero) => {
+                     if (numero < 5 && numero % 2 === 0) {
+                        paresMenoresQueCinco.push(numero);
+                     }
+                     });
+                     console.log(paresMenoresQueCinco); // Retorno: [2, 4]
+
+Pense sempre que o forEach faz com arrays o que as outras HOFs não conseguem fazer. Ele é genérico!
+
+
+// =================================================================================
+// =================================================================================
+
+(EXERCÍCIO MAPEHOFS NO vsc)
+
+
+// =================================================================================
+// =================================================================================
+
+EXERCÍCIOS, AGORA A PRÁTICA
+
+
