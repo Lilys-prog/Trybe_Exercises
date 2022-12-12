@@ -1,0 +1,26 @@
+INTRODUÇÃO
+======================================
+
+O QUE VAMOS APRENDER?
+Sobre as Higher Order Functions:   >>>>>>> Array.filter e o Array.reduce. <<<<<<<
+
+O filter e o reduce são algumas das mais poderosas funções para MANIPULAÇÃO E CRIAÇÃO DE ARRAYS. Enquanto o filter filtra o array de acordo com alguma condição e retorna apenas os valores que satisfizerem a essa condição, o reduce consegue reduzir o array a um valor único.
+======================================
+
+SKILLS ESPERADAS
+        - Utilizar a função Array.filter para filtrar um array;
+
+        - Utilizar a função Array.reduce para manipular arrays e construir resultados diversos;
+
+        - Aprender a usar de forma conjunta as Higher Order Functions.
+======================================
+
+IMPORTÂNCIA
+
+Imagine que você possua um array de números e strings e precise somente dos números. Como você resolveria esse problema? 🤔
+
+Você pode ter pensado em várias soluções, mas nessa situação você pode utilizar o >>> filter <<<, que, como o próprio nome diz, filtra os dados de um array. Dessa maneira, você consegue filtrar somente os números do array, usando apenas uma linha de código.
+
+E se você precisasse somar todos os números desse novo array, como você faria?
+
+Para realizar a soma de todos os números do array, você pode utilizar o >>> reduce <<<, que vai passar por cada número do seu array e reduzir esse array a um valor único.
