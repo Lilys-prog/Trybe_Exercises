@@ -24,3 +24,293 @@ Você pode ter pensado em várias soluções, mas nessa situação você pode ut
 E se você precisasse somar todos os números desse novo array, como você faria?
 
 Para realizar a soma de todos os números do array, você pode utilizar o >>> reduce <<<, que vai passar por cada número do seu array e reduzir esse array a um valor único.
+
+
+
+========================================================================================================================
+------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================
+------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================
+
+
+Array.filter
+
+O filter é uma função responsável por realizar algum tipo de filtro no array, de acordo com uma condição.
+
+Imagine que você tenha ficado responsável por um sistema de cadastro de clientes de uma loja de roupas e precise apenas dos nomes. Ao salvar o cadastro, o nome e o número do telefone foram salvos dentro de um mesmo array.
+
+O código abaixo mostra como ficou o resultado do array:
+
+
+                  const dados = ['Luca', 91234567, 'Ana', 92345678, 'Marlete', 93456789];
+
+
+É nessa situação que o filter entra em ação! A sintaxe dele é a seguinte (mesma das outras HOFs):
+
+                                array.filter(() => {});
+
+O filter faz uma iteração no array e recebe como parâmetro uma callback.
+
+                                array.filter((item) => {});
+
+Dentro do escopo da função é onde inserimos a condição a ser filtrada.
+
+
+>>>>> Para refletir 💭: Você precisa filtrar apenas o nome das pessoas do seu array dados. Ele possui dois tipos de informações: o nome, que é do tipo string, e o número de telefone, que é do tipo number. Pensando nisso, como você faria para pegar apenas os elementos do tipo string, que são referentes ao nome das pessoas? 🤔 <<<<<<
+
+
+Se você pensou no filter, acertou! Você pode realizar a filtragem do array dados e na condição, verificar pelos elementos do tipo string.
+
+
+                          const dados = ['Luca', 91234567, 'Ana', 92345678, 'Marlete', 93456789];
+
+                          dados.filter((item) => {
+                            // retorne apenas os elementos que são do tipo string
+                            return typeof item === 'string';
+                          });
+                          // ['Luca', 'Ana', 'Marlete']
+
+Você pode fazer esse código em apenas uma linha, omitindo a palavra return e retornando o valor logo após a arrow =>:
+
+                          const dados = ['Luca', 91234567, 'Ana', 92345678, 'Marlete', 93456789];
+
+                          dados.filter((item) => typeof item === 'string');
+                          // ['Luca', 'Ana', 'Marlete']
+
+
+Agora vamos supor que você queira apenas os valores que não são strings do array dados. Como faria isso? Basta alterar a condição do nosso filter!
+
+                          dados.filter((item) =>  typeof item !== 'string');    // não seja string
+
+A condição de dentro do filter é para retornar sempre que o elemento for diferente de string.
+
+-----------
+Outro exemplo:
+Imagine agora que você possua um array chamado listaNumeros com os valores 10, 20, 30, 40.
+
+                          const listaNumeros = [10, 20, 30, 40];
+
+Você precisa somente dos números maiores que 20 do array listaNumeros. Como isso pode ser feito? Se você pensou em utilizar o método filter, acertou de novo! O array pode ser filtrado com a condição de o número ser maior que 20. 
+
+
+                          const listaNumeros = [10, 20, 30, 40];
+
+        // Armazena o resultado em uma nova variável maiorVinte
+                          let maiorVinte = listaNumeros.filter((item) => {
+        // retorne apenas os elementos que são maiores do que vinte
+                            return item > 20;
+                          });
+
+                          console.log(maiorVinte);
+
+----------------------
+(vídeo - filter com array de objetos - Noel) - (algummmas infos aqui, outras no exScript.js)
+
+ENTENDENDO O .filter() - exScript.js
+Seleciona elementos de acordo com uma condição. É chamado a partir do array (array.filter()). Assim como nas demais HOFs, só o primeiro parâmetro é obrigatório, que é o que vai passar por todos os elementos do array. Os outros dois são o index e o próprio array original, mas só são usados em alguns casos, não são necessários, em geral.
+Funciona como o 'for' por tb iterar todos os elementos. 
+
+O .filter() SEMPRE retorna um array, mesmo que seja um só elemento filtrado ou um array vazio.
+
+
+========================================================================================================================
+------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================
+------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================
+
+
+Array.reduce
+
+Imagine que você tenha ficado responsável por criar uma página de carrinho de compras e para isso é necessário realizar a soma de todos os itens do carrinho para retornar o valor final da compra.
+
+O preço dos itens do carrinho estão dentro de um array e, para resolver esse problema, você pode utilizar o reduce, que é responsável por passar por cada um dos valores, >>>>>>>>>>> reduzindo o array a um único valor, que nesse caso é o valor total da compra. <<<<<<<<<<<<<
+
+Mas como o reduce funciona? 🤔
+
+Diferente das outras HOFs, o reduce recebe dois parâmetros: o primeiro é uma callback, e o segundo parâmetro é um valor inicial (que é opcional).
+
+                              array.reduce(callback, valorInicial);
+
+O valorInicial é o valor da primeira iteração e, em geral, ao realizar somas, esse valor é 0.
+
+Já a callback é a função que vai passar por cada um dos itens do array, e ela pode receber até 4 parâmetros, sendo eles:
+
+     - Acumulador: que é o valor que vai ser acumulado a cada iteração;
+     - Valor atual: que é o valor atual do item, a ser adicionado no acumulador;
+     - Index atual: que é o index do item que está sendo iterado naquele momento;
+     - Array: que é o array original.
+
+            array.reduce((acumulador, valorAtual, indexAtual, array) => { "código" }, valorInicial);
+                                  array.reduce(() => {}, início);
+
+>>>> Dos 4 parâmetros que a callback pode receber, apenas dois são obrigatórios: o ACUMULADOR e o VALOR ATUAL. <<<
+
+==========================================================================================================
+OU SEJA, no reduce é obriigatório ter a callback e na callback é obrigatório ter acumulador e valor atual.
+==========================================================================================================
+
+Os parâmetros acumulador e valor atual em geral são escritos em inglês e abreviados. Sendo assim:
+
+          o acumulador é chamado de acc (accumulator);
+          o valor atual é chamado de curr (current value).
+
+Temos então que acc, abreviatura de accumulator, ou acumulador, deve obrigatoriamente ser o primeiro parâmetro da callback, e o curr, abreviatura de currentValue, ou valor atual, também obrigatório, deve ser o segundo parâmetro da callback. Sendo assim, para trabalhar com a função reduce você deve ter algo parecido com o código abaixo:
+
+
+                                  array.reduce((acc, curr) => {
+                                    // escopo de execução da função
+                                  }, valorInicial);
+
+
+A função do acumulador (acc) é guardar o retorno da callback a cada iteração, e a função do curr é acessar cada um dos valores do array.
+
+
+--------------------------
+O código abaixo possui um array simulando o valor dos itens no carrinho de compras e a função do reduce para mostrar o que cada um dos parâmetros retorna. Execute o código abaixo no console do seu navegador e veja o que ele retorna:
+
+
+                                  const valorItens = [1, 32, 44, 2, 3];
+
+                                  valorItens.reduce((acc, curr) => {
+                                    console.log(`acumulador - acc:`, acc);
+                                    console.log(`valorAtual - curr:`, curr);
+                                  }, 0);
+
+Veja que, na primeira iteração, o valor do acc é 0, e depois se torna undefined.
+
+Isso ocorre porque a função do acumulador (acc) é guardar o retorno da callback a cada iteração, tendo como ponto de partida o valorInicial, que definimos como 0. Como a callback não está retornando nada, o valor se torna undefined, porque ele não acumulou nenhum resultado.
+--------------------------
+
+Para realizar a soma dos produtos, precisamos retornar esse cálculo dentro da callback.
+
+                                  valorItens.reduce((acc, curr) => {
+                                    console.log(`acc:`, acc);
+                                    console.log(`curr:`, curr);
+                                    console.log('a soma atual é', acc + curr);
+
+                                    return acc + curr;
+                                  }, 0);
+
+Veja que, a cada iteração, o acc e o curr são somados, e o acc é o valor acumulado da soma na iteração anterior.
+
+Ao final de toda a iteração é retornado o valor da soma de todos os itens do array e, nesse caso, você já sabe o valor total da compra.
+
+Abaixo você pode conferir o código comentado com o passo a passo do que acontece:
+
+                                  -----------------------
+
+                                  const valorItens = [1, 32, 44, 2, 3];
+
+                                  valorItens.reduce((acc, curr) => {
+                                    console.log(`valor atual é ${curr}`);
+
+                              >>>> // Antes da primeira iteração o valor de início do `acc` é o valor no index 0 do array, e o valor de início de `curr` é o valor no index 1 do array. <<<<
+                                    // Iteração 1: valor do acc é 1 e o de curr é 32;
+                                    // Após a primeira iteração, o valor de `acc` muda e passa a acumular agora o resultado do retorno da callback (acc + curr).
+                                    // Iteração 2: valor do acc é 33 e o de curr é 44;
+                                    // Acontece então uma segunda iteração, e `curr` agora assume o valor do index na sequência do array, no caso o valor do segundo index e `acc` segue armazenando os retornos.
+                                    // Iteração 3: valor do acc é 77 e o de curr é 2;
+                                    // Iteração 4: valor do acc é 79 e o de curr é 3;
+                                    // Valor final de `acc` é 82 e `curr` para no 3.
+
+                                    return acc + curr; 
+                                    
+                                    // Ao fim das iterações podemos ver que o `acc` armazenou o resultado total do retorno da função.
+                                  });
+
+
+                                    console.log(`valor atual é ${curr}`);
+                                    // Antes da primeira iteração o valor de início do `acc` é o valor no index 0 do array, e o valor de início de `curr` é o valor no index 1 do array.
+                                    // Iteração 1: valor do acc é 1 e o de curr é 32;
+                                    // Após a primeira iteração, o valor de `acc` muda e passa a acumular agora o resultado do retorno da callback (acc + curr).
+                                    // Iteração 2: valor do acc é 33 e o de curr é 44;
+                                    // Acontece então uma segunda iteração, e `curr` agora assume o valor do index na sequência do array, no caso o valor do segundo index e `acc` segue armazenando os retornos.
+                                    // Iteração 3: valor do acc é 77 e o de curr é 2;
+                                    // Iteração 4: valor do acc é 79 e o de curr é 3;
+                                    // Valor final de `acc` é 82 e `curr` para no 3.
+
+                                    return acc + curr; // Ao fim das iterações podemos ver que o `acc` armazenou o resultado total do retorno da função.
+                                  });
+
+                                  ----------------------------------
+Ao observar o código acima, identificamos também o papel do curr, que sempre armazena o valor do elemento atual, ou seja, o elemento do array que está sendo iterado no momento.
+
+
+===============================================================
+
+Passando um valor para o acc:
+Imagine que novamente você queira somar todos os valores de um array. Mas agora teremos um valor inicial já estipulado para o acc.
+
+                                  Com o antigo 'for':
+
+                                  const numbers = [1, 32, 44, 2, 3];
+                                  let sumNumbers = 30;
+
+                                  // A variável `sumNumbers` tem um valor inicial de 30 e vai acumulando, a cada iteração do for, o resultado da operação feita em seu escopo!
+
+                                  for (let index = 0; index < numbers.length; index += 1) {
+                                    sumNumbers += numbers[index];
+                                  }
+
+                                  console.log(sumNumbers); 
+                                  // 112
+
+
+                                  -----------------------
+                                  Com o 'reduce':
+
+                                  const numbers = [1, 32, 44, 2, 3];
+
+                                  const totalSum = numbers.reduce((acc, curr) => {
+                                    console.log(`valor do acc é ${acc} e o de curr é ${curr}`);
+
+                                    // Iteração 1: valor do acc é 30 e o de curr é 1
+                                    // Iteração 2:valor do acc é 31 e o de curr é 32
+                                    // Iteração 3: valor do acc é 63 e o de curr é 44
+                                    // Iteração 4: valor do acc é 107 e o de curr é 2
+                                    // Iteração 5: valor do acc é 109 e o de curr é 3
+                                    // Valor final de `acc`é 112 e `curr` para no 3
+
+
+                                    return acc + curr;
+                                  }, 30); 
+                                  // O `valorInicial` é 30, ou seja, `acc` antes de executar a primeira iteração já está armazenando esse valor.
+
+                                  console.log(`valor final do acc é ${totalSum}`);
+                                  // por fim, esse `console.log` imprime o retorno da nossa função, que é o valor final de `acc` após cada uma das 5 iterações, tendo iniciado com valor 30.
+
+
+Pode parecer estranho definir um valor fixo para o acumulador, mas isso acontece porque estamos trabalhando com números. O reduce é uma ferramenta poderosa e, em um código mais complexo, ele poderia receber um valor dinâmico, através de uma variável, ou até mesmo qualquer valor que não seja um número. Vale lembrar também que você aprendeu a usar o reduce com seus dois primeiros parâmetros, mas, embora pouco utilizados, existem mais dois parâmetros opcionais: index e array.
+
+
+-----------------------------------------------------------------------
+Veja também que, ao invés de passar a lógica direto dentro da callback do reduce, você pode criar uma função externa e chamá-la como sendo o parâmetro callback:
+
+                              const numbers = [1, 32, 44, 2, 3];
+
+                              const sumNumbers =  (acc, curr) => acc + curr;    // callback
+
+                              const totalSum = numbers.reduce(sumNumbers, 30);
+
+                              console.log(totalSum); //112
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+OUTROS EXEMPLOS DE USO DO REDUCE:
+
+>>>>> Hora de olhar outro exemplo para fixar e mostrar outras formas de se usar o reduce. Neste exemplo, serão comparados valores para buscar o maior valor em um array.
+(NO VSC: maiorValor.js)
+
+Pronto! Você encontrou o maior número do array utilizando reduce 🥳
+
+Geralmente, para encontrar o maior valor de um array utilizando o reduce, não utilizamos um valor inicial. Dessa forma, apenas valores presentes no array serão avaliados.
+
+
+>>>>> Para fixar ainda mais o conceito de reduce, faça uma função que some todos os números pares do array numbers.
+(NO VSC: evenValue.js)
+
+>>>>> Agora, crie uma função usando dados de estudantes, para mostrar na tela um relatório que diz em qual matéria a pessoa foi melhor. Você usará tanto o map quanto o reduce dentro dele!
+(NO VSC: studentData.js)
