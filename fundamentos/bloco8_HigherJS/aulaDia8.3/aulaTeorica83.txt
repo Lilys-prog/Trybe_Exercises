@@ -167,6 +167,37 @@ Temos então que acc, abreviatura de accumulator, ou acumulador, deve obrigatori
 A função do acumulador (acc) é guardar o retorno da callback a cada iteração, e a função do curr é acessar cada um dos valores do array.
 
 
+
+==========================================================================================================
+(AULA AO VIVO COM O THALLES - VÍDEO - NOTAS)
+A função '.reduce()' reduz o array a um único valor (pode ser uma string, um número, um array, um objeto).
+
+EXEMPLO NA VIDA REAL:
+5 amigos vão pagar uma conta de 50 reais num bar, sendo que cada um pediu um drink de 10 reais. Ou seja, 10 reais de cada. Esse, em reduce, seria o valor do acumulador === 10.
+
+- A primeira pessoa tem 10 reais e passa para a segunda, que agora tem os 10 reais passados e mais os seus próprios 10 reais, o que faz 20. Esse é o novo acumulador === 20, ou seja, o valor acumulado naquele dado momento.
+- Essa segunda pessoa passa os 20 reais para a próxima, sendo que é 10 + 10, e agora essa nova pessoa vai ter 30, incluindo seus próprios 10 reais. Sendo assim, o novo acumulador é 30.
+- Isso vai acontecer até chegarmos à última pessoa, que vai acrescentar seus próprios 10 reais e atingir o valor de 50 reais, que é o total da conta e o acumulador final.
+
+
+.reduce(callbackfn, valor inicial);   // valor inicial é opcional e, se estabelecido, vai ser o 1º valor do accumulator
+        ==========
+            ⏬
+A callbackfn é obrigatória e recebe como parâmetros obrigatórios (accumulator, currentValue).
+                                                                 ===========================
+
+(accumulator, currentValue) => {}      // pode receber index e o array tb, opcionalmente
+
+
+Se no fim, o array de retorno for vazio, ele vai possuir o valor inicial como elemento. Embora opcional, é importante analisar quando ele é necessário para que a função e o accumulator possam funcionar de forma correta, de acordo com o que se quer executar. Ele ajuda com a lógica, sem ele podemos chegar em 'undefined', etc.
+
+(PRÁTICA COM O THALLES - VSC)
+
+
+==========================================================================================================
+
+
+
 --------------------------
 O código abaixo possui um array simulando o valor dos itens no carrinho de compras e a função do reduce para mostrar o que cada um dos parâmetros retorna. Execute o código abaixo no console do seu navegador e veja o que ele retorna:
 
