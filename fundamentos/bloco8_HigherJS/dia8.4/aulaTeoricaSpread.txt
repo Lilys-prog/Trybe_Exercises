@@ -1,0 +1,249 @@
+Introdução
+O que vamos aprender?
+    Hoje você vai aprender algumas features(tipo ferramentas) do ES6 que são muito úteis na hora de desenvolver uma aplicação:
+
+         - spread operator;
+         - parâmetro rest;
+         - object destructuring.
+
+Não são HOF's, são ferramentas que permitem construir um código mais limpo e legível. Mas tb trabalham junto às HOF's.
+
+
+========================================================================================================================================
+----------------------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================================
+----------------------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================================
+
+
+SPREAD OPERATOR
+ - incluído no ES6
+ - Espalha os valores de arrays e objetos
+ - Ajuda a promover a imutabilidade do código
+
+Imagine que você tenha ficado responsável por criar o carrinho de compras de uma loja virtual, e que cada item que a pessoa usuária adicionar no carrinho você precise adicionar em um array para poder exibir a lista completa dos itens.
+
+Como você faria para adicionar os itens em um array? 🤔
+
+Talvez você tenha pensado em utilizar o push, como no exemplo abaixo:
+
+
+                                const items = ['Camiseta', 'Carregador', 'Chinelo'];
+                                items.push('Meia');
+
+                                console.log(items); 
+                                // ['Camiseta', 'Carregador', 'Chinelo', 'Meia']
+
+
+Essa solução é válida e o seu raciocínio está correto! Mas… Onde foi parar o array original items?
+
+Observe que, quando usamos o push para adicionar algo a um array, ele será sobrescrito, ou seja, seu array de items possui 4 elementos e você não consegue mais recuperar o array antigo com os 3 elementos: 'Camiseta', 'Carregador', 'Chinelo'.
+
+Neste exemplo, sobrescrever o array items não foi um problema. No entanto, em aplicações maiores, em que você precisa atualizar alguma informação de um array ou objeto, você pode querer manter as informações originais e apenas criar uma CÓPIA do array original com o que precisa ser alterado. 
+Em cenários como esse, vamos deixar o push de lado e usar um recurso incrível para adicionar valores a objetos iteráveis: o operador SPREAD. O que o spread faz é 'espalhar' os elementos, tanto de arrays quanto de objetos, e inserir informações novas sem alterar o array ou objeto original. Sua sintaxe é caracterizada por três pontos >>> (...) <<<.
+
+---------------------
+
+Utilizando spread em arrays
+    A sintaxe do spread para utilizar em arrays é composta por:
+       - uma variável, que vai salvar o novo array;
+       - os colchetes, que caracterizam que é um array;
+       - os três pontos ..., que caracterizam que uma informação está sendo espalhada. Nesse caso, o array original;
+       - o elemento a ser adicionado.
+
+
+sintaxe do spread em arrays:
+
+                              const variavel = [...arrayOriginal, itemParaAdicionar];
+
+
+Agora que você já conhece como é a sintaxe do spread, vamos rever o exemplo do carrinho de compras, para que você possa adicionar os elementos do carrinho em um array utilizando o spread.
+
+
+EXEMPLO 1:
+
+Primeiro passo 💻: Crie uma nova variável.
+  Crie uma nova variável utilizando os colchetes para informar que é um array.
+
+                                // array original
+                                const items = ['Camiseta', 'Carregador', 'Chinelo'];
+
+                                // nova variável
+                                const newItems = []; 
+
+Segundo passo 💻: Utilize a sintaxe de espalhamento (...)
+  Para informar que você vai 'espalhar' os itens de um array em um novo array, é necessário utilizar a sintaxe (...).
+  Para isso, dentro do novo array, utilize a sintaxe do spread no array items.
+
+                                // array original
+                                const items = ['Camiseta', 'Carregador', 'Chinelo'];
+
+                                // cria um novo array com os itens do array original espalhados
+                                const newItems = [...items];
+
+De olho na dica 👀: nesse momento você deve utilizar o console.log para visualizar as informações contidas no array newItems. Note que as informações são iguais ao array items. Isso porque a sintaxe (...) pega os itens de dentro de um array e ''espalha'' dentro do novo array.
+
+Terceiro passo 💻: Informe o elemento a ser adicionado no novo array.
+  Após 'espalhar' o array original, informe qual o novo elemento a ser adicionado. Para fazer isso, é necessário separar as informações por vírgula.
+
+                                // array original
+                                const items = ['Camiseta', 'Carregador', 'Chinelo'];
+
+                                // espalha o array items e adiciona o elemento 'Meia'
+                                const newItems = [...items, 'Meia'];
+
+Quarto passo 💻: Verifique o novo array.
+
+                                const items = ['Camiseta', 'Carregador', 'Chinelo'];
+
+                                const newItems = [...items, 'Meia'];         // em '...itens' está o array original
+
+                                console.log(newItems); // ['Camiseta', 'Carregador', 'Chinelo', 'Meia'];
+
+Pronto! O elemento ‘Meia’ foi adicionado no array newItems!
+
+Se você utilizar o console.log no array items, verá que ele continua com apenas 3 elementos. No exemplo acima, o array items é espalhado dentro do array newItems. Após espalhar os elementos do array items, é utilizada a vírgula, para separar as informações e adicionar o elemento 'Meia'.
+
+Observe que o array items se mantém com os elementos originais, mas o array newItems possui o elemento Meia. Dessa maneira, você consegue fazer quantas alterações forem necessárias mantendo o array original.
+
+
+EXEMPLO 2
+
+No exemplo abaixo, temos os arrays contendo os meses de cada uma das estações do ano:
+
+                                    const spring = ['OUT', 'NOV', 'DEZ'];
+                                    const summer = ['JAN', 'FEV', 'MAR'];
+                                    const fall = ['ABR', 'MAI', 'JUN'];
+                                    const winter = ['JUL', 'AGO', 'SET'];
+
+                                    const months = [...summer, ...fall, ...winter, ...spring];
+                                    console.log(months);
+
+Veja como será a saída do código acima:
+
+                                    [
+                                      'JAN', 'FEV', 'MAR',
+                                      'ABR', 'MAI', 'JUN',
+                                      'JUL', 'AGO', 'SET',
+                                      'OUT', 'NOV', 'DEZ'
+                                    ]
+
+
+---------------------
+
+
+Utilizando spread em objetos
+
+Imagine que você ficou responsável por adicionar itens em um carrinho de compras e, ao verificar o código, percebeu que o objeto com as informações do produto está sem o preço, e agora você precisa adicionar a propriedade price com o valor do produto.
+
+                                      const product = {
+                                          id: 1,
+                                          name: 'Camiseta',
+                                      };
+
+O objeto item possui as informações de id e name. Mas você precisa adicionar a informação price, que vai ser o preço desse produto. Para fazer isso utilizando o spread, você precisa criar uma nova variável e fazer o espalhamento.
+
+Primeiro passo 💻: Crie uma variável iniciando como objeto vazio.
+  Ao criar a sua variável, utilize as chaves {} para informar que é um objeto.
+
+                                      const product = {
+                                          id: 1,
+                                          name: 'Camiseta',
+                                      };
+
+                                      const newProduct = {};            // novo objeto
+
+Segundo passo 💻: Faça o espalhamento do objeto original.
+  Para espalhar o objeto original, utilize a sintaxe (...).
+
+                                      const product = {
+                                          id: 1,
+                                          name: 'Camiseta',
+                                      };
+
+                                      const newProduct = { ...product };
+
+Terceiro passo 💻: Informe o item a ser adicionado no objeto.
+  Após espalhar o objeto original, informe qual será o item a ser adicionado no novo objeto.
+
+                                      const product = {
+                                          id: 1,
+                                          name: 'Camiseta',
+                                      };
+
+                                      // adiciona a chave `price` com o valor `23`
+                                      const newProduct = { ...product, price: 23 };
+
+Quarto passo 💻: Verifique o novo objeto.
+
+                                      const product = {
+                                          id: 1,
+                                          name: 'Camiseta',
+                                      };
+
+                                      // adiciona a chave `price` com o valor `23`
+                                      const newProduct = { ...product, price: 23 };
+
+                                      console.log(newProduct); 
+                                      // {id: 1, name: 'Camiseta', price: '23'}
+
+Deu certo! Você espalhou o objeto product e adicionou a propriedade price dentro da variável newProduct.
+Nessa situação, você adicionou uma nova propriedade ao objeto. Mas e se o preço do produto estivesse em outro objeto, como você faria para unir as informações do preço com as informações do objeto product e obter o mesmo resultado? 🤔
+
+                                      const product = {
+                                          id: 1,
+                                          name: 'Camiseta',
+                                      };
+
+                                      const productPrice = {
+                                        price: 23
+                                      }
+
+Nessa situação, você pode utilizar o spread para espalhar os dois objetos e uni-los em um só. Analise e execute o código abaixo:
+
+                                      const product = {
+                                          id: 1,
+                                          name: 'Camiseta',
+                                      };
+
+                                      const productPrice = {
+                                        price: 23
+                                      }
+
+                                      // espalha o objeto `product` e espalha o objeto `productPrice`
+                                      const newProduct = { ...product, ...productPrice };       // não esquecer as chaves, pq é objeto
+
+                                      console.log(newProduct); 
+                                      // {id: 1, name: 'Camiseta', price: 23}
+
+Viu só? Deu certo! A variável newProduct é um objeto que faz o espalhamento tanto do objeto product quanto do objeto productPrice e realiza a união dos dois, mantendo os objetos originais.
+
+Dessa maneira, você conseguiu obter um novo objeto com as informações necessárias sem alterar os objetos product e productPrice.
+
+---------------
+Relembrando 🧠: Você se lembra do Object.assign? Pois bem, ao utilizar o operador spread, você pode obter o mesmo resultado do Object.assign, porém de uma forma mais simples, pois é possível utilizar uma sintaxe mais curta.
+---------------
+
+(VÍDEO SOBRE O SPREAD - Lucas ferraz: instrutor - não é o Luquinha, é o magrinho com sorriso lindo e cabelo maravilhoso)
+exSpread001.js
+
+---------------------
+
+Como vimos no vídeo, o operador spread é um recurso do ES6 que nos permite espalhar os valores de um objeto iterável, como um array, em um novo objeto. Dessa forma, apenas copiamos as informações do array original e colamos em outro lugar.
+Como o spread espalha valores, ele também pode ser utilizado para enviar argumentos de uma função que recebe vários parâmetros.
+
+Por exemplo, a função nativa do JavaScript Math.max recebe vários parâmetros e retorna o maior número entre eles. Execute o código abaixo e observe o retorno:
+
+                    console.log(Math.max(57, 8, 5, 800, 152, 74, 630, 98, 40)); // 800
+
+Observe que o retorno da função foi 800, que é o maior valor entre os número que a função Math.max recebeu como parâmetro.
+
+
+Mas esse código não é muito legível. Para resolver esse problema, você pode salvar os valores em um array e utilizar o spread. Analise e execute o código abaixo:
+
+                      const randomNumbers = [57, 8, 5, 800, 152, 74, 630, 98, 40];
+                      console.log(Math.max(...randomNumbers)); // 800
+
+O código acima utiliza o spread para espalhar os números do array randomNumbers como argumentos da função Math.max. Dessa maneira, seu código fica muito mais organizado e legível, e você pode utilizá-lo sempre que for preciso, tanto em funções nativas quanto em funções criadas por você.
+
+ALGUNS EXERCÍCIOS NA PASTA
