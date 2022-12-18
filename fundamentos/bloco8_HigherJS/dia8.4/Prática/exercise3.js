@@ -7,14 +7,4 @@
 
 // =================
 
-// Exercício 2
-  // Crie uma função sum que, dado um número ilimitado de parâmetros, retorna a soma desses parâmetros. Ao chamar a função dessa forma : sum(4,5,6), o número 15 deve ser retornado.
-
-// escreva sum abaixo
-
-const sumAll = (...numbers) => {
-  return numbers.reduce((total, element) => {
-    return total + element;
-  }, 0);
-}
-console.log(sumAll(4, 5, 6));
+// Exercício 3
