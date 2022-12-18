@@ -1,0 +1,36 @@
+PARÂMETRO REST (aula 8.4 - parte 2/3)
+  Agora que você viu como funciona o spread operator, vamos aprender mais um recurso que irá te auxiliar a criar funções que recebem um número >>> ILIMITADO <<< de argumentos: o PARÂMETRO REST.
+O parâmetro rest é uma feature do ES6 que permite que você agrupe informações em um lugar só, mas neste caso, será aplicado nos parâmetros dentro da função.
+
+Por exemplo, ao trabalhar com funções, você pode se deparar com a necessidade de inserir múltiplos parâmetros para executar um determinado código. Ao utilizar o rest, você consegue agrupar esses argumentos usando a sintaxe de três pontos(...). Observe e execute o código abaixo:
+
+                                  const countParams = (...args) => {                // número indeterminado de parâmetros
+                                    console.log('parâmetros:', args);
+                                    return `Você passou ${args.length} parâmetros para a função.`;
+                                  }
+
+                                  console.log(countParams(0, 1, 2)); 
+                                  // aquii vc passou 3 parâmetros para a função.
+
+                                  console.log(countParams('string', null, [1, 2, 3], { }));         // parâmetros de tipos diferentes
+                                  // aqui vc passou 4 parâmetros para a função.
+
+
+
+EXEMPLO
+Agora que você já conhece a sintaxe do rest, imagine que você precisa criar uma função que é responsável por somar a quantidade de produtos de um carrinho de compras. Essa função pode receber vários números como parâmetros e deve realizar a soma de todos eles (vc não sabe quantas coisas a pessoa vai comprar). Observe e execute o código abaixo:
+
+                                  const sum = (...args) => args.reduce((accumulator, current) => accumulator + current, 0);
+                                  console.log(sum(4, 7, 8, 9, 60)); 
+                                  // 88
+
+No exemplo acima, a função sum utiliza a HOF reduce para calcular a soma de todos os argumentos passados a ela, independentemente do número. Como o parâmetro rest “empacota” todos os argumentos em um array, podemos utilizar o reduce para somar tudo o que estiver dentro desse array. Independentemente do número de argumentos passados, a função irá executar a soma. Ao utilizar o rest, suas funções podem ficar mais flexíveis quando você precisa passar múltiplos parâmetros, pois não precisa especificar quantos argumentos a função irá receber!
+
+SPREAD E REST 📝: O spread é responsável por espalhar valores, e ele pode ser utilizado para passar parâmetros ao >>> EXECUTAR uma função. Já o rest pode ser utilizado para agrupar valores ao >>> DECLARAR funções que podem receber múltiplos parâmetros.
+
+
+
+
+
+
+
