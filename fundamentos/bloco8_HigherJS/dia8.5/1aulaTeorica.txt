@@ -1,0 +1,50 @@
+Introdução
+O que vamos aprender?
+  Hoje você vai aprender quatro features do ES6 que são muito úteis na hora de desenvolver uma aplicação:
+
+   - array destructuring;
+   - default destructuring;
+   - abbreviation object literal;
+   - default params.
+
+
+========================================================================================================================
+========================================================================================================================
+------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================
+========================================================================================================================
+
+ARRAY DESTRUCTURING 
+A desestruturação é uma ferramenta que permite acessar uma propriedade de um objeto e atribuí-la a uma variável.
+
+Ao trabalhar com objetos, podemos fazer da seguinte forma:
+
+                            const user = {
+                              name: 'Marlete',
+                              age: 60
+                            };
+
+                            // desestruturamos a propriedade name e atribuímos como variável
+                            const { name } = user;
+
+                            // conseguimos utilizar a propriedade como variável
+                            console.log(name); 
+                            // Marlete
+
+Como arrays são objetos iteráveis, que têm algumas similaridades com os objetos em JavaScript, você pode estar se perguntando: será que a desestruturação também se aplica a arrays? 🤔
+
+Esse questionamento é válido, e a resposta é: SIM! Podemos desestruturar arrays da mesma forma que desestruturamos objetos usando a notação para array destructuring.
+
+Com a desestruturação de array, podemos declarar todas as variáveis contendo os nomes dos países usando apenas uma única linha de código:
+
+                            const arrayCountries = ['Brazil', 'Japan', 'China', 'Canada'];
+                            const [firstCountry, secondCountry, thirdCountry, fourthCountry] = arrayCountries;
+
+                            console.log(firstCountry); // Brazil
+                            console.log(secondCountry); // Japan
+                            console.log(thirdCountry); // China
+                            console.log(fourthCountry); // Canada
+
+Perceba que, ao invés de declarar uma variável para cada elemento do Array acessando o valor através do index como arrayCountries[0], é possível passar no valor da desestruturação o nome da variável que irá armazenar o valor correspondente àquela posição. Ou seja, a variável firstCountry, passada no primeiro index da desestruturação, armazena o valor presente no index 0 da array desestruturada.
+
+Colocar uma vírgula para cada valor que não se quer usar na desestruturação, se for pra pegar só uma parte do array sem fazer um novo.

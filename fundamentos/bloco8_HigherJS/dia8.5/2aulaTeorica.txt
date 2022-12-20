@@ -1,0 +1,35 @@
+DEFAULT DESTRUCTURING
+
+  Agora você já sabe como aplicar desestruturação em objetos e arrays. Você se lembra do que acontece quando tentamos acessar:
+
+    - uma propriedade que não existe em um objeto?
+    - um valor em uma posição inexistente em um array?
+
+                                    const person = {
+                                      name: 'João',
+                                      lastName: 'Jr',
+                                      age: 34,
+                                    };
+
+                                    const { nationality } = person;
+
+Quando tentamos acessar uma propriedade que não existe, o valor retornado é undefined. E se você quisesse dar um valor padrão para alguma chave, caso essa propriedade não existisse no objeto? Você consegue atribuir esse valor padrão utilizando >>>>> default destructuring <<<<<, que é mais um recurso do ES6:
+
+                                const person = {
+                                  name: 'João',
+                                  lastName: 'Jr',
+                                  age: 34,
+                                };
+
+                                const { nationality = 'Brazilian' } = person;          // desestruturação criando chave 
+                                console.log(nationality); // Brazilian
+
+
+Analogamente, o mesmo pode ser feito na hora de desestruturar um array:
+
+                                const position2d = [1.0, 2.0];
+                                const [x, y, z = 0] = position2d;                // fazendo default de z = 0
+
+                                console.log(x); // 1
+                                console.log(y); // 2
+                                console.log(z); // 0
